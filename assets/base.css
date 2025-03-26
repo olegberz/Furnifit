@@ -3594,4 +3594,17 @@ details-disclosure > details {
   100% {
     transform: translateX(100%) scaleX(0);
   }
+  .custom-header-btn {
+    background-color: white;
+    color: black;
+    padding: 10px 20px;
+    border: 2px solid black;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
 }
