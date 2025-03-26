@@ -116,47 +116,6 @@
   endif
 %}
 
-<a id="nav-get-pod-btn" 
-   class="button_base_styles__YskWF button_compact__8MZZ4 button_secondary__T1pXa NavBar_cta__KFc0M custom-button"
-   aria-label="Buy now" 
-   href="/eu/product/pod-cover/">
-   <span class="button_icon_span__BONnc black_spinner">Buy now</span>
-</a>
-
-<a id="nav-get-pod-btn" 
-   class="custom-button"
-   aria-label="Buy now" 
-   href="/eu/product/pod-cover/">
-   <span>Buy now</span>
-</a>
-
-<style>
-  .custom-button {
-    background-color: black;
-    color: white;
-    border: 2px solid black;
-    padding: 5px 10px; /* Сделал кнопку меньше */
-    text-decoration: none;
-    display: inline-block;
-    font-weight: bold;
-    text-align: center;
-    border-radius: 3px;
-    font-size: 14px;
-    position: absolute;
-    top: 10px;
-    right: 20px; /* Размещаем кнопку справа в хедере */
-  }
-
-  .custom-button:hover {
-    background-color: white;
-    color: black;
-    border-color: black;
-  }
-</style>
-
-
-
-
 <{{ header_tag }} {% if header_tag == 'sticky-header' %}data-sticky-type="{{ section.settings.sticky_header_type }}"{% endif %} class="header-wrapper color-{{ section.settings.color_scheme }} gradient{% if section.settings.show_line_separator %} header-wrapper--border-bottom{% endif %}">
   {%- liquid
     assign social_links = false
@@ -283,7 +242,6 @@
           class="header__icon header__icon--account link focus-inset{% if section.settings.menu != blank %} small-hide{% endif %}"
           rel="nofollow"
         >
-          <a href="/custom-page" class="header__button">Моя кнопка</a>
           {%- if section.settings.enable_customer_avatar -%}
             <account-icon>
               {%- if customer and customer.has_avatar? -%}
@@ -327,6 +285,9 @@
               <span aria-hidden="true">{{ cart.item_count }}</span>
             {%- endif -%}
             <span class="visually-hidden">{{ 'sections.header.cart_count' | t: count: cart.item_count }}</span>
+
+            <a href="#" class="custom-header-btn">Кнопка</a>
+
           </div>
         {%- endif -%}
       </a>
