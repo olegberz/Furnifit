@@ -76,6 +76,12 @@
 
 /* base */
 
+.header__menu {
+  flex-grow: 1; /* Позволяет меню занять свободное пространство */
+  display: flex;
+  justify-content: center; /* Центрирует меню */
+}
+
 .page-width {
   max-width: var(--page-width);
   margin: 0 auto;
