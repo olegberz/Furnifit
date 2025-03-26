@@ -116,7 +116,32 @@
   endif
 %}
 
-<a id="nav-get-pod-btn" class="button_base_styles__YskWF button_compact__8MZZ4 button_secondary__T1pXa NavBar_cta__KFc0M" aria-label="Buy now" href="/eu/product/pod-cover/"><span class="button_icon_span__BONnc black_spinner" style="opacity: 1; display: flex; align-items: center; gap: 0.2rem;">Shop now</span></a>
+<a id="nav-get-pod-btn" 
+   class="button_base_styles__YskWF button_compact__8MZZ4 button_secondary__T1pXa NavBar_cta__KFc0M custom-button"
+   aria-label="Buy now" 
+   href="/eu/product/pod-cover/">
+   <span class="button_icon_span__BONnc black_spinner">Buy now</span>
+</a>
+
+<style>
+  .custom-button {
+    background-color: white !important;
+    color: white !important;
+    border: 2px solid white !important;
+    padding: 10px 20px;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 5px;
+  }
+
+  .custom-button:hover {
+    background-color: transparent !important;
+    color: white !important;
+  }
+</style>
+
 
 <{{ header_tag }} {% if header_tag == 'sticky-header' %}data-sticky-type="{{ section.settings.sticky_header_type }}"{% endif %} class="header-wrapper color-{{ section.settings.color_scheme }} gradient{% if section.settings.show_line_separator %} header-wrapper--border-bottom{% endif %}">
   {%- liquid
