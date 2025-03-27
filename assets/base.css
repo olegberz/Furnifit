@@ -1320,6 +1320,18 @@ button.shopify-payment-button__button--unbranded {
   text-decoration: none;
 }
 
+button:hover,
+button:focus,
+button:active {
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+
+.banner__box, .banner__buttons {
+  box-shadow: none;
+}
+
 
 .button--tertiary {
   font-size: 1.2rem;
