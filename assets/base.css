@@ -1312,8 +1312,8 @@ button.shopify-payment-button__button--unbranded {
   line-height: calc(1 + 0.2 / var(--font-body-scale));
   border: none;  
   border-radius: 12px;  
-  background-color: white; 
-  color: black;
+  background-color: black; 
+  color: white;
   font-weight: 400; 
   text-decoration: none;
 }
