@@ -28,7 +28,7 @@
 
 .video-section__media iframe {
   background-color: rgba(var(--color-foreground), 0.03);
-  border: 30px;
+  border: 100px;
 }
 
 .video-section__poster,
