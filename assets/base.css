@@ -3613,7 +3613,7 @@ details-disclosure > details {
     top: 50%;
     transform: translateY(-50%);
 }
-header__heading {
+.header__heading {
   color: white;
 }
 }
