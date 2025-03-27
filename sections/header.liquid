@@ -117,7 +117,20 @@
   top: 50%;
   transform: translateY(-50%);
   text-decoration: none;
+  transition: all 0.3s ease;
 }
+
+    .custom-header-btn:hover {
+  transform: translateY(-50%) translateY(2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+    .custom-header-btn:focus {
+  outline: none; /* Убираем обводку при фокусе */
+  transform: translateY(-50%) translateY(1px);
+}
+
+    
     .header__inline-menu {
   position: absolute;
   left: 50%;
