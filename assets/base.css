@@ -1317,9 +1317,8 @@ button,
   border-radius: 10px; 
   box-sizing: border-box; 
   transition: all 0.3s ease; 
-  position: absolute; 
+  position: relative; 
   left: 10px;
-  transform: translateY(-50%);
   overflow: hidden;
 }
 
