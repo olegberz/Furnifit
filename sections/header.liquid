@@ -96,7 +96,7 @@
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
     
-    .custom-header-btn, .header__icons {
+    .custom-header-btn {
   background-color: white;
   color: black;
   padding: 4px 8px;
@@ -104,13 +104,16 @@
   font-weight: 400;
   border-radius: 8px;
   position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
   right: 20px;
   top: 50%;
   transform: translateY(-50%);
   text-decoration: none;
 }
+    .header_icons {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+    }
 }
   }
 {%- endstyle -%}
