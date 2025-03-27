@@ -2,10 +2,10 @@
   --ratio-percent: 56.25%;
   position: relative;
   padding-bottom: calc(var(--ratio-percent) - var(--media-border-width));
-  border-radius: 15px; /* Это создаст округлые углы */
+  border-radius: 15px;
 }
 
-/* Нужно для сохранения градиента или анимации, чтобы прозрачные PNG отображались корректно */
+
 .scroll-trigger:where(.gradient.video-section__media) {
   background: transparent;
 }
@@ -29,8 +29,8 @@
 
 .video-section__media iframe {
   background-color: rgba(var(--color-foreground), 0.03);
-  border: 100px;
-  border-radius: 15px; /* Округлим углы у iframe */
+  border: 10px;
+  border-radius: 15px; 
 }
 
 .video-section__poster,
@@ -39,7 +39,7 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  border-radius: 15px; /* Округляем углы для всех этих элементов */
+  border-radius: 15px; 
 }
 
 .video-section__media video {
@@ -48,5 +48,5 @@
 
 .video-section__media.media-fit-cover video {
   object-fit: cover;
-  border-radius: 15px; /* Округлим углы видео */
+  border-radius: 15px;
 }
