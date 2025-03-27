@@ -1317,8 +1317,8 @@ button,
   border-radius: 10px; 
   box-sizing: border-box; 
   transition: all 0.3s ease; 
-  position: absolute; 
-  left: 18px;
+  position: relative; 
+  left: 10px;
   overflow: hidden;
 }
 
