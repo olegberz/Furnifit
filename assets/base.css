@@ -3614,6 +3614,6 @@ details-disclosure > details {
     transform: translateY(-50%);
 }
 .header__heading {
-  color: white;
+  color: white !important;
 }
 }
