@@ -2837,36 +2837,22 @@ details[open] > .header__submenu {
 }
 
 .header__menu-item:hover {
-  color: rgb(var(--color-foreground));
-  text-decoration: none;
-  transition: all 0.3s ease;
-  font-size: 16px;
-  background-color: #333; 
-  transform: scale(1.05);  
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.header__menu-item span {
-  transition: text-decoration var(--duration-short) ease;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  font-size: 16px;
+  color: rgb(var(--color-foreground)); /* Цвет текста при наведении */
+  text-decoration: none;  /* Убираем подчеркивание */
+  font-size: 16px;  /* Устанавливаем нужный размер шрифта */
+  background-color: #333;  /* Темный фон */
+  transform: scale(1.05);  /* Увеличиваем элемент при наведении */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);  /* Легкая тень */
 }
 
 .header__menu-item:hover span {
-  text-underline-offset: 0.3rem;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  font-size: 16px;
-  background-color: #333; 
-  transform: scale(1.05);  
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-underline-offset: 0.3rem;  /* Сдвигаем подчеркивание, если оно есть */
 }
 
 details[open] > .header__menu-item {
-  text-decoration: none;
-  transition: all 0.3s ease;
-  font-size: 16px;
+  text-decoration: none; /* Убираем подчеркивание при открытом состоянии */
+  transition: all 0.3s ease; /* Плавный переход для всех свойств */
+  font-size: 16px; /* Размер шрифта */
 }
 
 details[open]:hover > .header__menu-item {
