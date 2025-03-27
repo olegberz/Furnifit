@@ -2448,7 +2448,7 @@ input[type='checkbox'] {
 }
 
 .header__heading-link:hover .h2 {
-  color: white !important;
+ color: white !important;
 }
 
 .header__heading-link .h2 {
@@ -3612,7 +3612,7 @@ details-disclosure > details {
     top: 50%;
     transform: translateY(-50%);
 }
-.header__heading {
-  color: white !important;
+h1.header__heading {
+  color: rgb(var(--color-foreground));
 }
 }
