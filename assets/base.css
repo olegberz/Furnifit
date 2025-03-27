@@ -1308,17 +1308,24 @@ button,
 .button-label,
 .shopify-challenge__button,
 .customer button {
-  border: none !important;  /* Убираем границу */
-  border-radius: 12px;
-  outline: none !important;  /* Убираем обводку при фокусе */
-  box-shadow: none !important; /* Убираем тень */
+  border: none !important;         
+  outline: none !important;        
+  box-shadow: none !important;     
+  border-radius: 15px;            
+  box-sizing: border-box;         
 }
 
 button:focus,
 button:hover {
-  border: none !important;  /* Убираем границу при фокусе или наведении */
-  outline: none !important;  /* Убираем обводку при фокусе */
-  box-shadow: none !important; /* Убираем тень при наведении */
+  border: none !important;          
+  outline: none !important;        
+  box-shadow: none !important;      
+}
+button:focus,
+button:hover {
+  border: none !important; 
+  outline: none !important; 
+  box-shadow: none !important;
 }
 
 button:hover,
