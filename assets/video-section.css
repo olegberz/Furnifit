@@ -3,6 +3,7 @@
   position: relative;
   padding-bottom: calc(var(--ratio-percent) - var(--media-border-width));
   border-radius: 15px;
+  overflow: hidden;
 }
 
 
