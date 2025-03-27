@@ -1308,24 +1308,22 @@ button,
 .button-label,
 .shopify-challenge__button,
 .customer button {
-  border: none !important;         
-  outline: none !important;        
-  box-shadow: none !important;     
-  border-radius: 15px;            
-  box-sizing: border-box;         
+  border: none;                     /* Убираем границу */
+  outline: none;                    /* Убираем обводку */
+  padding: 8px 16px;                /* Устанавливаем отступы (регулируй по необходимости) */
+  background-color: white;          /* Устанавливаем фон */
+  color: black;                     /* Цвет текста */
+  font-size: 16px;                  /* Размер шрифта */
+  border-radius: 15px;              /* Применяем округлённые углы */
+  box-sizing: border-box;           /* Учитываем паддинги и границы при расчете размеров */
+  transition: all 0.3s ease;        /* Плавный переход для всех изменений */
 }
 
-button:focus,
-button:hover {
-  border: none !important;          
-  outline: none !important;        
-  box-shadow: none !important;      
-}
-button:focus,
-button:hover {
-  border: none !important; 
-  outline: none !important; 
-  box-shadow: none !important;
+button:hover,
+button:focus {
+  background-color: #f0f0f0;        /* Меняем цвет фона при наведении или фокусе */
+  color: #333;                      /* Меняем цвет текста при наведении или фокусе */
+  box-shadow: none;                  /* Убираем тень, если она есть */
 }
 
 button:hover,
