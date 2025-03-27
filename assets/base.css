@@ -1308,16 +1308,17 @@ button,
 .button-label,
 .shopify-challenge__button,
 .customer button {
-  border: none;                     /* Убираем границу */
-  outline: none;                    /* Убираем обводку */
-  padding: 8px 16px;                /* Устанавливаем отступы (регулируй по необходимости) */
-  background-color: white;          /* Устанавливаем фон */
-  color: black;                     /* Цвет текста */
-  font-size: 16px;                  /* Размер шрифта */
-  border-radius: 15px;              /* Применяем округлённые углы */
-  box-sizing: border-box;           /* Учитываем паддинги и границы при расчете размеров */
-  transition: all 0.3s ease;        /* Плавный переход для всех изменений */
+  border: none;                  /* Убираем границу */
+  outline: none;                 /* Убираем обводку */
+  padding: 8px 16px;             /* Устанавливаем отступы */
+  background-color: white;       /* Белый фон */
+  color: black;                  /* Чёрный текст */
+  font-size: 16px;               /* Размер шрифта */
+  border-radius: 20px;           /* Округляем углы */
+  box-sizing: border-box;        /* Учитываем padding и border */
+  transition: all 0.3s ease;     /* Плавный переход */
 }
+
 
 button:hover,
 button:focus {
