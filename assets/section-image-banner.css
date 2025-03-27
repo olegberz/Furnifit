@@ -4,11 +4,16 @@
   flex-direction: column;
   z-index: auto;
   isolation: isolate;
+  width: 100%; /* Обеспечиваем, чтобы .banner занимал всю ширину */
 }
 
 .banner__box {
-  text-align: left;
+  text-align: left; /* Текст внутри .banner__box будет выровнен по левому краю */
+  width: 100%; /* Убедимся, что блок займет всю доступную ширину */
+  margin: 0; /* Убираем отступы */
+  padding: 0; /* Убираем внутренние отступы, чтобы не было смещения */
 }
+
 
 /* Needed for gradient continuity with or without animation, the transform scopes the gradient to its container which happens already when animation are turned on */
 .banner__box.gradient {
