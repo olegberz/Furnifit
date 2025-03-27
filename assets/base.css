@@ -1302,12 +1302,14 @@ button.shopify-payment-button__button--unbranded {
   background-color: rgba(var(--color-button-text), 0.3);
 }
 
+
 button,
 .button,
 .button-label,
 .shopify-challenge__button,
 .customer button {
   border: none !important;  /* Убираем границу */
+  border-radius: 12px;
   outline: none !important;  /* Убираем обводку при фокусе */
   box-shadow: none !important; /* Убираем тень */
 }
@@ -1317,6 +1319,18 @@ button:hover {
   border: none !important;  /* Убираем границу при фокусе или наведении */
   outline: none !important;  /* Убираем обводку при фокусе */
   box-shadow: none !important; /* Убираем тень при наведении */
+}
+
+button:hover,
+button:focus,
+button:active {
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+
+.banner__box, .banner__buttons {
+  box-shadow: none;
 }
 
 
