@@ -4,17 +4,58 @@
   flex-direction: column;
   z-index: auto;
   isolation: isolate;
-  width: 100%; /* Убедимся, что контейнер растягивается на всю ширину */
+  margin: 0;
+  padding: 0;
+  width: 100%; /* Убираем возможные отступы */
 }
 
+/* Блок с содержимым баннера */
 .banner__box {
-  text-align: left; /* Убедимся, что текст выравнивается по левому краю */
-  width: 100%; /* Блок займёт всю ширину */
-  position: absolute; /* Абсолютное позиционирование */
-  left: 0; /* Убираем отступ слева */
-  top: 0; /* Прижимаем сверху, если нужно */
-  margin: 0; /* Убираем внешние отступы */
-  padding: 0; /* Убираем внутренние отступы */
+  text-align: left;
+  position: relative; /* Убираем лишние отступы */
+  left: 0; /* Устанавливаем влево */
+  transform: translateX(0); /* Убираем возможное смещение */
+  width: 100%;
+}
+
+/* Стили для заголовка баннера */
+.banner__heading {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+/* Текст баннера */
+.banner__text {
+  font-size: 1.2rem;
+  color: #333;
+  margin: 10px 0;
+}
+
+/* Стили для кнопок */
+.banner__buttons {
+  display: inline-flex;
+  gap: 1rem;
+  margin-top: 20px;
+}
+
+/* Кнопка */
+.button {
+  border: none;
+  padding: 8px 16px;
+  background-color: black;
+  color: white;
+  font-size: 16px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+/* Эффект при наведении на кнопку */
+.button:hover {
+  background-color: #333;
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* Needed for gradient continuity with or without animation, the transform scopes the gradient to its container which happens already when animation are turned on */
