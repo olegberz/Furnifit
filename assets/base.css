@@ -1327,21 +1327,13 @@ button span,
   display: inline-block;
 }
 
-
-
 button:hover,
-button:focus {
-  background-color: #f0f0f0;        /* Меняем цвет фона при наведении или фокусе */
-  color: #333;                      /* Меняем цвет текста при наведении или фокусе */
-  box-shadow: none;                  /* Убираем тень, если она есть */
-}
-
-button:hover,
-button:focus,
-button:active {
-  border: none;
-  outline: none;
-  box-shadow: none;
+.button:hover,
+.button-label:hover,
+.shopify-challenge__button:hover,
+.customer button:hover {
+  transform: translateY(2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .banner__box, .banner__buttons {
