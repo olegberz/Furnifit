@@ -2841,7 +2841,6 @@ details[open] > .header__submenu {
   text-decoration: none;
   transition: all 0.3s ease;
   font-size: 16px;
-  background-color: #333; 
   transform: scale(1.05);  
 }
 
@@ -2856,8 +2855,7 @@ details[open] > .header__submenu {
   text-underline-offset: 0.3rem;
   text-decoration: none;
   transition: all 0.3s ease;
-  font-size: 16px;
-  background-color: #333; 
+  font-size: 16px; 
   transform: scale(1.05);  
 }
 
@@ -2868,8 +2866,7 @@ details[open] > .header__menu-item {
 }
 
 details[open]:hover > .header__menu-item {
-  text-decoration-thickness: 0.2rem;
-  background-color: #333;  
+  text-decoration-thickness: 0.2rem; 
   transform: scale(1.05);   
 }
 
