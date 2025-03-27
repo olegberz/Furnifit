@@ -2,9 +2,8 @@
   --ratio-percent: 56.25%;
   position: relative;
   padding-bottom: calc(var(--ratio-percent) - var(--media-border-width));
-  border: 10px solid #000;
-  border-radius: 15px; 
-  overflow: hidden; 
+  border-radius: 15px;
+  overflow: hidden;
 }
 
 .video-section__media iframe,
@@ -13,7 +12,7 @@
   width: 100%;
   height: 100%;
   border-radius: 15px; 
-  object-fit: cover; 
+  object-fit: cover;
 }
 
 .video-section__media video {
@@ -22,7 +21,6 @@
 
 .video-section__media.media-fit-cover video {
   object-fit: cover;
-  border-radius: 15px;
 }
 
 
