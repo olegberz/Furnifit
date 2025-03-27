@@ -1302,32 +1302,29 @@ button.shopify-payment-button__button--unbranded {
   background-color: rgba(var(--color-button-text), 0.3);
 }
 
-
-/* Основные стили для кнопки */
 button,
 .button,
 .button-label,
 .shopify-challenge__button,
 .customer button {
-  border: none; /* Убираем границу */
-  outline: none; /* Убираем outline (обводку при фокусе) */
-  box-shadow: none; /* Убираем тень, которая может быть в некоторых браузерах */
-  padding: 8px 16px; /* Устанавливаем отступы для кнопки */
-  background-color: white; /* Белый фон */
-  color: black; /* Чёрный цвет текста */
-  font-size: 16px; /* Размер шрифта */
-  border-radius: 20px; /* Углы становятся округлыми */
-  box-sizing: border-box; /* Обеспечиваем, чтобы padding не изменял размеры кнопки */
-  transition: all 0.3s ease; /* Плавный переход при изменении */
-  position: relative; /* Для работы с абсолютными позициями, если они понадобятся */
-  overflow: hidden; /* Обрезаем содержимое, если оно выходит за пределы */
+  border: none;
+  outline: none; 
+  box-shadow: none; 
+  padding: 8px 16px;
+  background-color: black; 
+  color: white;
+  font-size: 16px; 
+  border-radius: 20px; 
+  box-sizing: border-box; 
+  transition: all 0.3s ease; 
+  position: relative; 
+  overflow: hidden;
 }
 
-/* Если на кнопке есть текст или иконка */
 button span,
 .button-label span,
 .shopify-challenge__button span {
-  display: inline-block; /* Обеспечиваем корректное отображение содержимого внутри кнопки */
+  display: inline-block;
 }
 
 
