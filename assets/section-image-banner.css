@@ -1,14 +1,20 @@
 .banner {
-  min-height: 100vh; /* Растягивает баннер на всю высоту экрана */
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  z-index: auto;
+  isolation: isolate;
+  width: 100%;
 }
 
 .banner__box {
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%); /* Центрирование по вертикали */
+  text-align: left;
   width: 100%;
-  text-align: center; /* Если нужно выровнять текст */
+  position: absolute; 
+  left: 0; 
+  top: 0; 
+  margin: 0;
+  padding: 0; 
 }
 
 /* Needed for gradient continuity with or without animation, the transform scopes the gradient to its container which happens already when animation are turned on */
