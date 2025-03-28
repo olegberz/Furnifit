@@ -1255,7 +1255,7 @@ button.shopify-payment-button__button--unbranded {
 .shopify-payment-button__button--unbranded:after {
   content: '';
   position: absolute;
-  padding: 6px, 15px;
+  padding: 6px, 15px; !important
   top: var(--buttons-border-width);
   right: var(--buttons-border-width);
   bottom: var(--buttons-border-width);
