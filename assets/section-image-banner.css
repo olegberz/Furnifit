@@ -5,11 +5,12 @@
   z-index: auto;
   isolation: isolate;
   width: 100%;
+  height: 120vh
 }
 
 .banner__box {
   text-align: left;
-  width: 100%;
+  width: 110%;
   position: absolute; 
   left: 0; 
   top: 0; 
