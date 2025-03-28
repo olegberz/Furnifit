@@ -2839,35 +2839,23 @@ details[open] > .header__submenu {
 .header__menu-item:hover {
   color: rgb(var(--color-foreground));
   text-decoration: none;
-  transition: all 0.3s ease;
-  font-size: 16px;
-  transform: scale(1.05);  
+  transform: scale(1.05) translateY(-2px); /* Плавный эффект поднятия */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Лёгкая тень */
 }
 
 .header__menu-item span {
-  transition: text-decoration var(--duration-short) ease;
-  text-decoration: none;
   transition: all 0.3s ease;
-  font-size: 16px;
+  text-decoration: none;
 }
 
 .header__menu-item:hover span {
   text-underline-offset: 0.3rem;
   text-decoration: none;
-  transition: all 0.3s ease;
-  font-size: 16px; 
-  transform: scale(1.05);  
+  transform: scale(1.05);
 }
 
 details[open] > .header__menu-item {
-  text-decoration: none;
-  transition: all 0.3s ease;
   font-size: 16px;
-}
-
-details[open]:hover > .header__menu-item {
-  text-decoration-thickness: 0.2rem; 
-  transform: scale(1.05);   
 }
 
 details[open] > .header__menu-item .icon-caret {
