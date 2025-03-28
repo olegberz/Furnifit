@@ -2839,8 +2839,7 @@ details[open] > .header__submenu {
 .header__menu-item:hover {
   color: rgb(var(--color-foreground));
   text-decoration: none;
-  transform: scale(1.05) translateY(-2px); /* Плавный эффект поднятия */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Лёгкая тень */
+  filter: brightness(0.9); /* Тёмнее на 10% */
 }
 
 .header__menu-item span {
@@ -2850,8 +2849,9 @@ details[open] > .header__submenu {
 
 .header__menu-item:hover span {
   text-underline-offset: 0.3rem;
-  text-decoration: none;
-  transform: scale(1.05);
+  text-decoration: underline;
+}
+form: scale(1.05);
 }
 
 details[open] > .header__menu-item {
