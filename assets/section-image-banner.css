@@ -9,13 +9,12 @@
 }
 
 .banner__box {
-  text-align: left;
-  width: 110%;
-  position: absolute; 
-  left: 0; 
-  top: 0; 
-  margin: 0;
-  padding: 0; 
+  position: absolute;
+  left: 5%; /* Сдвигаем влево */
+  top: 50%;
+  transform: translateY(-50%); /* Центрируем по вертикали */
+  width: 40%; /* Ограничиваем ширину, чтобы текст не был в одну строчку */
+  text-align: left; /* Выравниваем текст влево */
 }
 
 /* Needed for gradient continuity with or without animation, the transform scopes the gradient to its container which happens already when animation are turned on */
