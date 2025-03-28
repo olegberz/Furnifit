@@ -390,20 +390,16 @@
   }
 }
 
-.banner::after {
+.banner::after,
+.banner__media::after {
   content: '';
   position: absolute;
   top: 0;
-  left: 0;
+  background: #000000;
+  opacity: 0;
+  z-index: 1;
   width: 100%;
   height: 100%;
-  background: black;
-  opacity: 0; /* Исходное состояние – прозрачность */
-  transition: opacity 0.3s ease;
-}
-
-.banner:hover::after {
-  opacity: 0.3; /* При наведении становится темнее */
 }
 
 .banner__box > * + .banner__text {
