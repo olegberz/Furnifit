@@ -2849,7 +2849,7 @@ details[open] > .header__submenu {
 
 .header__menu-item:hover span {
   text-underline-offset: 0.3rem;
-  text-decoration: underline;
+  text-decoration: none;
 }
 form: scale(1.05);
 }
