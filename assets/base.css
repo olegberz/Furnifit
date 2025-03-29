@@ -1333,8 +1333,8 @@ button:hover,
 .button-label:hover,
 .shopify-challenge__button:hover,
 .customer button:hover {
-  background-color: rgb(40, 40, 40); /* Делает кнопку немного светлее */
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2); /* Светлый эффект по краям */
+  background-color: rgb(40, 40, 40); 
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.4)
 }
 
 .banner__box, .banner__buttons {
