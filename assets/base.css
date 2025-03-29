@@ -1342,9 +1342,13 @@ button:hover,
 }
 
 .banner__box {
-  margin-top: 200px; !important
-  margin-left: -200px;!important
-  padding: 20px; !important
+  display: flex;
+  flex-direction: column; /* Размещаем элементы по вертикали */
+  align-items: flex-start; /* Выравниваем элементы по левому краю */
+  margin-top: 200px; /* Сдвигаем блок вниз */
+  margin-left: -200px !important; /* Сдвигаем блок влево */
+  padding: 20px; /* Дополнительные отступы для всего блока */
+  box-sizing: border-box;
 }
 
 .banner__heading {
