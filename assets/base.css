@@ -1345,8 +1345,8 @@ button:hover,
   display: flex;
   flex-direction: column; /* Размещаем элементы по вертикали */
   align-items: flex-start; /* Выравниваем все элементы по левому краю */
-  margin-top: 100px; /* Сдвигаем блок вниз */
-  margin-left: -100px !important; /* Сдвигаем блок влево */
+  margin-top: 200px; /* Сдвигаем блок вниз */
+  margin-left: -200px !important; /* Сдвигаем блок влево */
   padding: 20px; /* Дополнительные отступы для всего блока */
   box-sizing: border-box;
 }
@@ -1369,14 +1369,15 @@ button:hover,
 .banner__text {
   margin-top: 10px;
   text-align: left; /* Выравнивание текста по левому краю */
-  margin-left: -20px !important; /* Сдвиг текста влево */
+  margin-left: -200px !important; /* Сдвиг текста влево точно так же, как заголовок */
 }
 
 .banner__buttons {
   margin-top: 20px;
-  margin-left: -20px !important; /* Сдвиг кнопки влево */
+  margin-left: -200px !important; /* Сдвиг кнопки влево точно так же, как заголовок */
   text-align: left; /* Выравнивание кнопки по левому краю */
 }
+
 
 
 
