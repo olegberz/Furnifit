@@ -1341,6 +1341,18 @@ button:hover,
   box-shadow: none;
 }
 
+<div class="banner__box content-container content-container--full-width-mobile color-scheme-1 gradient">
+  <h2 class="banner__heading inline-richtext h0">
+    Waking up never<br>felt so good
+  </h2>
+  <div class="banner__text rte body">
+    <p>Turn any bed into the ultimate sleeping experience</p>
+  </div>
+  <div class="banner__buttons">
+    <a href="/collections/all" class="button button--primary">Shop now</a>
+  </div>
+</div>
+
 .banner__box {
   display: flex;
   flex-direction: column; /* Размещаем элементы по вертикали */
