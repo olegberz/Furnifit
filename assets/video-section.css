@@ -21,6 +21,12 @@
   object-fit: cover !important;
 }
 
+<div class="video-section__media">
+  <iframe src="your-video-source" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  <div class="play-button">See how it works →</div>
+</div>
+
+
 
 .video-section__media video {
   background: #000000;
