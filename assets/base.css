@@ -576,13 +576,13 @@ details > * {
 }
 
 .header__heading-logo-wrapper {
-  margin-left: -50px; /* Перемещаем логотип влево */
+  margin-left: -50px;!important;
   max-width: 50%; /* Уменьшаем ширину логотипа в два раза */
 }
 
 .header__heading-logo {
   width: 50%; /* Логотип теперь будет в два раза меньше */
-  max-width: none; /* Убираем ограничения на максимальную ширину */
+  max-width: none; !important;
 }
 
 @media (prefers-reduced-motion) {
