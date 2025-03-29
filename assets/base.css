@@ -253,10 +253,10 @@ body:has(.section-header .drawer-menu) .announcement-bar-section .page-width {
   font-weight: var(--font-body-weight);
 } 
 
-h1
-.h1 {
-  margin-left: -250px;
+h1 {
+  margin-left: -250px !important;
 }
+
 
 h1,
 h2,
