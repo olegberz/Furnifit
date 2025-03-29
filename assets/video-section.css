@@ -7,35 +7,17 @@
   max-width: 1400px !important;
   margin: 0 auto !important;
   background-color: black !important;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .video-section__media iframe,
 .video-section__media video {
   position: absolute;
+  top: 0;
+  left: 0;
   width: 100% !important;
   height: 100% !important;
-  border-radius: 30px !important;
+  border-radius: inherit !important; /* Наследует скругление от родителя */
   object-fit: cover !important;
-  display: block !important;
-}
-
-.video-section__media::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: black;
-  border-radius: 30px !important;
-  z-index: 1;
-  pointer-events: none; /* Чтобы не мешало клику */
-}
-
-.video-section__media iframe,
-.video-section__media video {
-  z-index: 2; /* Поднимаем видео выше */
 }
 
 
