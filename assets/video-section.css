@@ -2,18 +2,21 @@
   --ratio-percent: 56.25%;
   position: relative;
   padding-bottom: calc(var(--ratio-percent) - var(--media-border-width));
-  border-radius: 15px;
+  border-radius: 30px !important; /* Еще больше скругления */
   overflow: hidden;
+  max-width: 1400px !important; /* Увеличенный размер */
+  margin: 0 auto !important; /* Центрирование */
 }
 
 .video-section__media iframe,
 .video-section__media video {
   position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 15px; 
-  object-fit: cover;
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 30px !important; /* Совпадает со стилем контейнера */
+  object-fit: cover !important;
 }
+
 
 .video-section__media video {
   background: #000000;
