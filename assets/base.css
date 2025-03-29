@@ -1342,10 +1342,9 @@ button:hover,
 }
 
 .banner__box {
-  position: relative; /* Чтобы использовать свойства top и left */
-  top: 50px; /* Сдвиг вниз на 50px */
-  left: -20px; /* Сдвиг влево на 20px */
-  padding: 20px; /* Дополнительные отступы для всего блока */
+  margin-top: 50px; !important
+  margin-left: -20px;!important
+  padding: 20px; !important
 }
 
 .banner__heading {
@@ -1363,21 +1362,12 @@ button:hover,
   box-sizing: border-box;
 }
 
-.page-wrapper {
-  display: flex;
-  justify-content: center; /* Центрируем по горизонтали */
-  align-items: flex-start; /* Выравниваем по верхнему краю */
-  height: 100vh; /* Устанавливаем высоту страницы */
+.banner__text {
+  margin-top: 10px;
 }
 
-@media (max-width: 768px) {
-  .banner__heading {
-    font-size: 40px; /* Уменьшаем размер шрифта на мобильных устройствах */
-    max-width: 100%; /* Убираем максимальную ширину */
-    padding: 10px;
-    top: 20px; /* Меньше отступ снизу на мобильных устройствах */
-    left: 0; /* Без сдвига на мобильных устройствах */
-  }
+.banner__buttons {
+  margin-top: 20px;
 }
 
 
