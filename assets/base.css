@@ -575,6 +575,16 @@ details > * {
   visibility: hidden;
 }
 
+.header__heading-logo-wrapper {
+  margin-left: -50px; /* Перемещаем логотип влево */
+  max-width: 50%; /* Уменьшаем ширину логотипа в два раза */
+}
+
+.header__heading-logo {
+  width: 50%; /* Логотип теперь будет в два раза меньше */
+  max-width: none; /* Убираем ограничения на максимальную ширину */
+}
+
 @media (prefers-reduced-motion) {
   .motion-reduce {
     transition: none !important;
