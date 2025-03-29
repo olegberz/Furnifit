@@ -2,7 +2,7 @@
   --ratio-percent: 56.25%;
   position: relative;
   padding-bottom: calc(var(--ratio-percent) - var(--media-border-width));
-  border-radius: 30px !important;
+  border-radius: 30px !important; /* Устанавливаем красивое скругление */
   overflow: hidden;
   max-width: 1400px !important;
   margin: 0 auto !important;
@@ -16,8 +16,9 @@
   left: 0;
   width: 100% !important;
   height: 100% !important;
-  border-radius: 30px !important; /* Убедимся, что это скругление не теряется */
+  border-radius: 30px !important; /* Наследуем скругление от родителя */
   object-fit: cover !important;
+  box-sizing: border-box; /* Убираем возможные проблемы с размерами */
 }
 
 
