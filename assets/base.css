@@ -1317,12 +1317,11 @@ button,
   font-size: 16px; 
   border-radius: 10px; 
   box-sizing: border-box; 
-  transition: all 0.3s ease; 
+  transition: background-color 0.3s ease; 
   position: relative; 
   left: 10px;
   overflow: hidden;
 }
-
 
 button span,
 .button-label span,
@@ -1331,17 +1330,18 @@ button span,
 }
 
 button:hover,
-.button:hover,
 .button-label:hover,
 .shopify-challenge__button:hover,
 .customer button:hover {
-  transform: translateY(2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: rgb(30, 30, 30); 
+  transform: none;
+  box-shadow: none; 
 }
 
 .banner__box, .banner__buttons {
   box-shadow: none;
 }
+
 
 
 .button--tertiary {
