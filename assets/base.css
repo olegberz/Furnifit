@@ -1344,7 +1344,7 @@ button:hover,
 .banner__box {
   display: flex;
   flex-direction: column; /* Размещаем элементы по вертикали */
-  align-items: flex-start; /* Выравниваем элементы по левому краю */
+  align-items: flex-start; /* Выравниваем все элементы по левому краю */
   margin-top: 200px; /* Сдвигаем блок вниз */
   margin-left: -200px !important; /* Сдвигаем блок влево */
   padding: 20px; /* Дополнительные отступы для всего блока */
@@ -1368,11 +1368,16 @@ button:hover,
 
 .banner__text {
   margin-top: 10px;
+  text-align: left; /* Выравнивание текста по левому краю */
+  margin-left: -20px !important; /* Сдвиг текста влево */
 }
 
 .banner__buttons {
   margin-top: 20px;
+  margin-left: -20px !important; /* Сдвиг кнопки влево */
+  text-align: left; /* Выравнивание кнопки по левому краю */
 }
+
 
 
 
