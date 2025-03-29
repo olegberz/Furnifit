@@ -6,8 +6,8 @@
   max-width: 1400px !important;
   margin: 0 auto !important;
   background-color: black !important;
-  border-radius: 30px !important; /* Скругляем контейнер */
-  clip-path: inset(0 round 30px); /* Скругляем углы с помощью clip-path */
+  border-radius: 30px !important; 
+  clip-path: inset(0 round 30px); 
 }
 
 .video-section__media iframe,
@@ -17,7 +17,7 @@
   left: 0;
   width: 100% !important;
   height: 100% !important;
-  border-radius: 30px !important; /* Сохраняем скругление у видео */
+  border-radius: 30px !important; 
   object-fit: cover !important;
 }
 
