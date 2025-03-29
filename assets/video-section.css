@@ -2,10 +2,11 @@
   --ratio-percent: 56.25%;
   position: relative;
   padding-bottom: calc(var(--ratio-percent) - var(--media-border-width));
-  border-radius: 30px !important; /* Еще больше скругления */
+  border-radius: 30px !important;
   overflow: hidden;
-  max-width: 1400px !important; /* Увеличенный размер */
-  margin: 0 auto !important; /* Центрирование */
+  max-width: 1400px !important;
+  margin: 0 auto !important;
+  background-color: black !important; /* Фон, чтобы не было белого прямоугольника */
 }
 
 .video-section__media iframe,
@@ -13,8 +14,19 @@
   position: absolute;
   width: 100% !important;
   height: 100% !important;
-  border-radius: 30px !important; /* Совпадает со стилем контейнера */
+  border-radius: 30px !important;
   object-fit: cover !important;
+  display: block !important;
+}
+
+.video-section__media::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: black; /* Черный фон до загрузки видео */
+  border-radius: 30px !important;
+  z-index: -1; /* Чтобы фон не перекрывал видео */
 }
 
 
