@@ -2,14 +2,14 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start; /* Выравниваем элементы по левому краю */
+  align-items: flex-start !important; /* Выравниваем элементы по левому краю с !important */
   width: 100%;
   position: relative;
 }
 
 @media screen and (min-width: 750px) {
   .newsletter-form {
-    align-items: flex-start; /* Оставляем выравнивание по левому краю */
+    align-items: flex-start !important; /* Применяем !important для выравнивания по левому краю */
     margin: 0 auto;
     max-width: 36rem;
   }
@@ -20,7 +20,7 @@
 }
 
 .newsletter-form__field-wrapper .field__input {
-  padding-right: 5rem;
+  padding-right: 5rem !important; /* Добавляем !important для корректной работы */
 }
 
 .newsletter-form__field-wrapper .field {
@@ -28,7 +28,7 @@
 }
 
 .newsletter-form__message {
-  justify-content: flex-start; /* Выравниваем сообщение слева */
+  justify-content: flex-start !important; /* Выравниваем сообщение слева с !important */
   margin-bottom: 0;
 }
 
@@ -38,14 +38,14 @@
 
 @media screen and (min-width: 750px) {
   .newsletter-form__message {
-    justify-content: flex-start; /* Выравниваем сообщение слева для больших экранов */
+    justify-content: flex-start !important; /* Добавляем !important для большего контроля */
   }
 }
 
 .newsletter-form__button {
   width: 4.4rem;
   margin: 0;
-  left: 0; /* Перемещаем кнопку влево */
+  left: 0 !important; /* Перемещаем кнопку влево с !important */
   top: 0;
   height: 100%;
   z-index: 2;
