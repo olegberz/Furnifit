@@ -1334,7 +1334,7 @@ button:hover,
 .shopify-challenge__button:hover,
 .customer button:hover {
   background-color: rgb(40, 40, 40); 
-  box-shadow: 0 0 25px rgba(255, 255, 255, 0.8)
+  box-shadow: 0 0 40px rgba(255, 255, 255, 0.8);
 }
 
 .banner__box, .banner__buttons {
