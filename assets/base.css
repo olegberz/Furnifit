@@ -1374,7 +1374,7 @@ button:hover,
 
 .banner__buttons {
   margin-top: 20px;
-  margin-left: -180px !important; /* Уменьшаем сдвиг кнопки влево */
+  margin-left: -260px !important; /* Теперь кнопка также сдвигается влево, как и текст */
   text-align: left; /* Выравнивание кнопки по левому краю */
 }
 
