@@ -265,7 +265,10 @@ h5,
 .h4,
 .h5 {
   font-family: var(--font-heading-family);
+  
   font-style: var(--font-heading-style);
+  margin-left: -50px; /* Перемещаем логотип влево */
+  max-width: 50%;
   font-weight: var(--font-heading-weight);
   letter-spacing: calc(var(--font-heading-scale) * 0.06rem);
   color: rgb(var(--color-foreground));
