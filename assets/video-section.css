@@ -2,11 +2,12 @@
   --ratio-percent: 56.25%;
   position: relative;
   padding-bottom: calc(var(--ratio-percent) - var(--media-border-width));
-  border-radius: 30px !important; /* Устанавливаем красивое скругление */
   overflow: hidden;
   max-width: 1400px !important;
   margin: 0 auto !important;
   background-color: black !important;
+  border-radius: 30px !important; /* Скругляем контейнер */
+  clip-path: inset(0 round 30px); /* Скругляем углы с помощью clip-path */
 }
 
 .video-section__media iframe,
@@ -16,9 +17,8 @@
   left: 0;
   width: 100% !important;
   height: 100% !important;
-  border-radius: 30px !important; /* Наследуем скругление от родителя */
+  border-radius: 30px !important; /* Сохраняем скругление у видео */
   object-fit: cover !important;
-  box-sizing: border-box; /* Убираем возможные проблемы с размерами */
 }
 
 
