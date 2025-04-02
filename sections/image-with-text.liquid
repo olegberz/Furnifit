@@ -1,0 +1,586 @@
+{{ 'component-image-with-text.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+{%- liquid
+  assign fetch_priority = 'auto'
+  if section.index == 1
+    assign fetch_priority = 'high'
+  endif
+  if section.settings.color_scheme == section.settings.section_color_scheme and section.settings.content_layout == 'no-overlap'
+    assign remove_color_classes = true
+  endif
+-%}
+
+<div class="section-{{ section.id }}-padding gradient color-{{ section.settings.section_color_scheme }}">
+  <div class="page-width">
+    <div class="image-with-text image-with-text--{{ section.settings.content_layout }} isolate{% if settings.text_boxes_border_thickness > 0 and settings.text_boxes_border_opacity > 0 and settings.media_border_thickness > 0 and settings.media_border_opacity > 0 %} collapse-borders{% endif %}{% unless section.settings.color_scheme == section.settings.section_color_scheme and settings.media_border_thickness > 0 and settings.text_boxes_shadow_opacity == 0 and settings.text_boxes_border_thickness == 0 or settings.text_boxes_border_opacity == 0 %} collapse-corners{% endunless %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+      
+      <div class="image-with-text__grid grid grid--gapless grid--1-col grid--2-col-tablet">
+        
+        <div class="image-with-text__media-item image-with-text__media-item--{{ section.settings.desktop_image_width }} grid__item">
+          <div class="image-with-text__media image-with-text__media--{{ section.settings.height }} global-media-settings{% unless remove_color_classes %} gradient color-{{ section.settings.color_scheme }}{% else %} background-transparent{% endunless %}{% if section.settings.image != blank %} media{% else %} image-with-text__media--placeholder placeholder{% endif %}{% if section.settings.image_behavior != 'none' %} animate--{{ section.settings.image_behavior }}{% endif %}"
+            {% if section.settings.height == 'adapt' and section.settings.image != blank %}
+              style="padding-bottom: {{ 1 | divided_by: section.settings.image.aspect_ratio | times: 100 }}%;"
+            {% endif %}
+          >
+            {%- if section.settings.image != blank -%}
+              {{ section.settings.image | image_url: width: 1000 | image_tag: sizes: sizes, widths: widths }}
+            {%- else -%}
+              {{ 'detailed-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
+            {%- endif -%}
+          </div>
+        </div>
+
+        <div class="ProductBreakdown_breakdown__TOBx_ grid__item">
+           <h2 class="ProductBreakdown_title">Make sizing easy</h2>
+          <ul class="ProductBreakdown_breakdown_list__rHID_" style="list-style-type: none;">
+            <li data-highlighted="false" class="ProductBreakdown_breakdown_item__GXcw9">
+              <button id="product-breakdown-item-cover" class="Button_base__NYfuD" role="button" type="button">
+                <span class="ProductBreakdown_breakdown_item_content__iB7xZ">
+                  <p class="type_base Type_headline5__do08K" role="heading" aria-level="2">Materials</p>
+                  <p class="type_base Type_body2__7cQr6 ProductBreakdown_breakdown_item_description__B6LL5">
+                    <span>Our furniture is crafted from high-quality, sustainable materials, ensuring durability and long-lasting comfort. Each piece is designed with attention to detail, using only premium woods, fabrics, and finishes that enhance both aesthetic appeal and functionality.</span>
+                  </p>
+                </span>
+              </button>
+            </li>
+            <li data-highlighted="false" class="ProductBreakdown_breakdown_item__GXcw9" style="text-decoration: none">
+              <button id="product-breakdown-item-base" class="Button_base__NYfuD" role="button" type="button">
+                <span class="ProductBreakdown_breakdown_item_content__iB7xZ">
+                  <p class="type_base Type_headline5__do08K" role="heading" aria-level="2">Craftsmanship</p>
+                  <p class="type_base Type_body2__7cQr6 ProductBreakdown_breakdown_item_description__B6LL5">
+                    <span>Expert craftsmanship is at the heart of our furniture design. Skilled artisans meticulously create each piece, ensuring precision and quality in every joint, stitch, and finish. This attention to detail results in furniture that not only looks beautiful but is built to last.</span>
+                  </p>
+                </span>
+              </button>
+            </li>
+            <li data-highlighted="true" class="ProductBreakdown_breakdown_item__GXcw9">
+              <button id="product-breakdown-item-hub" class="Button_base__NYfuD" role="button" type="button">
+                <span class="ProductBreakdown_breakdown_item_content__iB7xZ">
+                  <p class="type_base Type_headline5__do08K" role="heading" aria-level="2">Comfort</p>
+                  <p class="type_base Type_body2__7cQr6 ProductBreakdown_breakdown_item_description__B6LL5">
+                    <span>Comfort is paramount in our designs. Every piece of furniture is engineered with ergonomic principles in mind, offering support and relaxation for various lifestyles. From plush cushions to adjustable features, our furniture ensures the ultimate comfort for every user.</span>
+                  </p>
+                </span>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  <style>
+
+    .section-image {
+  width: 100%;
+  height: auto;
+  transition: opacity 0.3s ease-in-out;
+}
+    
+    .ProductBreakdown_title {
+  font-family: "Neue Montreal", sans-serif;
+  font-size: clamp(2rem, .9375rem + 2.84375vw, 2.75rem);
+  font-weight: 300px; 
+  margin-bottom: 10px;
+  text-align: left;
+  padding-left: 15px; 
+  padding-right: 0px;
+  padding-top: 28px;
+  padding-bottom: 28px;
+  display: block;
+}
+
+    
+
+
+    
+  .ProductBreakdown_breakdown_item_description__B6LL5 {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    color: #FFFFF
+  }
+
+    .ProductBreakdown_breakdown_item__GXcw9 button {
+    background: #f3f3f3;; 
+    color: black !important; 
+    border: none;
+    width: 100%;
+    text-align: left;
+    padding: 50px;
+    cursor: pointer;
+    border-radius: 0;
+    border-left: 5px solid black;
+    padding-left: 60px;
+}
+
+    
+
+  .ProductBreakdown_breakdown_item_content__iB7xZ p {
+    margin: 0;
+    padding-bottom: 28px
+    padding-left: 32px
+    padding-right: 0px
+    padding-top: 28px
+  }
+
+  .Button_base__NYfuD {
+    display: block;
+    width: 100%;
+  }
+
+  .ProductBreakdown_breakdown_item__GXcw9 p.type_base.Type_headline5__do08K {
+    font-family: "Neue Montreal", sans-serif;
+    font-weight: 100px; !important;
+    font-size: 22px;
+    color: #000000;
+    margin-bottom: 20px;
+  }
+
+  .ProductBreakdown_breakdown_item__GXcw9 p.type_base.Type_body2__7cQr6 {
+     font-family: "Neue Montreal", sans-serif;
+     font-size: 15px;
+     color: #636363;
+  }
+
+   .ProductBreakdown_breakdown__TOBx_ {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 40px;
+} 
+    
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+  const buttons = document.querySelectorAll('.ProductBreakdown_breakdown_item__GXcw9 button');
+  const descriptions = document.querySelectorAll('.ProductBreakdown_breakdown_item_description__B6LL5');
+  const imageElement = document.querySelector('.section-image'); 
+
+  // Массив с путями к изображениям для каждой секции
+  const images = {
+    "Materials": "materials-image.jpg",
+    "Craftsmanship": "craftsmanship-image.jpg",
+    "Comfort": "comfort-image.jpg"
+  };
+
+  buttons.forEach(button => {
+    button.addEventListener('click', function() {
+      descriptions.forEach(desc => {
+        desc.style.maxHeight = null;
+      });
+
+      const description = this.querySelector('.ProductBreakdown_breakdown_item_description__B6LL5');
+      if (description.style.maxHeight) {
+        description.style.maxHeight = null;
+      } else {
+        description.style.maxHeight = description.scrollHeight + 'px';
+      }
+
+      const sectionTitle = this.querySelector('p.Type_headline5__do08K').textContent.trim();
+      if (images[sectionTitle]) {
+        imageElement.src = images[sectionTitle]; 
+      }
+    });
+  });
+});
+</script>
+
+{% schema %}
+{
+  "name": "t:sections.image-with-text.name",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "t:sections.image-with-text.settings.image.label"
+    },
+    {
+      "type": "select",
+      "id": "height",
+      "options": [
+        {
+          "value": "adapt",
+          "label": "t:sections.image-with-text.settings.height.options__1.label"
+        },
+        {
+          "value": "small",
+          "label": "t:sections.image-with-text.settings.height.options__2.label"
+        },
+        {
+          "value": "medium",
+          "label": "t:sections.image-with-text.settings.height.options__3.label"
+        },
+        {
+          "value": "large",
+          "label": "t:sections.image-with-text.settings.height.options__4.label"
+        }
+      ],
+      "default": "adapt",
+      "label": "t:sections.image-with-text.settings.height.label"
+    },
+    {
+      "type": "select",
+      "id": "desktop_image_width",
+      "options": [
+        {
+          "value": "small",
+          "label": "t:sections.image-with-text.settings.desktop_image_width.options__1.label"
+        },
+        {
+          "value": "medium",
+          "label": "t:sections.image-with-text.settings.desktop_image_width.options__2.label"
+        },
+        {
+          "value": "large",
+          "label": "t:sections.image-with-text.settings.desktop_image_width.options__3.label"
+        }
+      ],
+      "default": "medium",
+      "label": "t:sections.image-with-text.settings.desktop_image_width.label"
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "options": [
+        {
+          "value": "image_first",
+          "label": "t:sections.image-with-text.settings.layout.options__1.label"
+        },
+        {
+          "value": "text_first",
+          "label": "t:sections.image-with-text.settings.layout.options__2.label"
+        }
+      ],
+      "default": "image_first",
+      "label": "t:sections.image-with-text.settings.layout.label"
+    },
+    {
+      "type": "select",
+      "id": "image_behavior",
+      "options": [
+        {
+          "value": "none",
+          "label": "t:sections.all.animation.image_behavior.options__1.label"
+        },
+        {
+          "value": "ambient",
+          "label": "t:sections.all.animation.image_behavior.options__2.label"
+        },
+        {
+          "value": "zoom-in",
+          "label": "t:sections.all.animation.image_behavior.options__4.label"
+        }
+      ],
+      "default": "none",
+      "label": "t:sections.all.animation.image_behavior.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.image-with-text.settings.header.content"
+    }, 
+    {
+      "type": "select",
+      "id": "content_layout",
+      "options": [
+        {
+          "value": "no-overlap",
+          "label": "t:sections.image-with-text.settings.content_layout.options__1.label"
+        },
+        {
+          "value": "overlap",
+          "label": "t:sections.image-with-text.settings.content_layout.options__2.label"
+        }
+      ],
+      "default": "no-overlap",
+      "label": "t:sections.image-with-text.settings.content_layout.label"
+    },       
+    {
+      "type": "select",
+      "id": "desktop_content_position",
+      "options": [
+        {
+          "value": "top",
+          "label": "t:sections.image-with-text.settings.desktop_content_position.options__1.label"
+        },
+        {
+          "value": "middle",
+          "label": "t:sections.image-with-text.settings.desktop_content_position.options__2.label"
+        },
+        {
+          "value": "bottom",
+          "label": "t:sections.image-with-text.settings.desktop_content_position.options__3.label"
+        }
+      ],
+      "default": "top",
+      "label": "t:sections.image-with-text.settings.desktop_content_position.label"
+    },
+    {
+      "type": "select",
+      "id": "desktop_content_alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:sections.image-with-text.settings.desktop_content_alignment.options__1.label"
+        },
+        {
+          "value": "center",
+          "label": "t:sections.image-with-text.settings.desktop_content_alignment.options__2.label"
+        },
+        {
+          "value": "right",
+          "label": "t:sections.image-with-text.settings.desktop_content_alignment.options__3.label"
+        }
+      ],
+      "default": "left",
+      "label": "t:sections.image-with-text.settings.desktop_content_alignment.label"
+    },
+    {
+      "type": "select",
+      "id": "mobile_content_alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:sections.image-with-text.settings.mobile_content_alignment.options__1.label"
+        },
+        {
+          "value": "center",
+          "label": "t:sections.image-with-text.settings.mobile_content_alignment.options__2.label"
+        },
+        {
+          "value": "right",
+          "label": "t:sections.image-with-text.settings.mobile_content_alignment.options__3.label"
+        }
+      ],
+      "default": "left",
+      "label": "t:sections.image-with-text.settings.mobile_content_alignment.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.image-with-text.settings.header_colors.content"
+    },        
+    {
+      "type": "color_scheme",
+      "id": "section_color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.multirow.settings.container_color_scheme.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "heading",
+      "name": "t:sections.image-with-text.blocks.heading.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "inline_richtext",
+          "id": "heading",
+          "default": "t:sections.image-with-text.blocks.heading.settings.heading.default",
+          "label": "t:sections.image-with-text.blocks.heading.settings.heading.label"
+        },
+        {
+          "type": "select",
+          "id": "heading_size",
+          "options": [
+            {
+              "value": "h2",
+              "label": "t:sections.all.heading_size.options__1.label"
+            },
+            {
+              "value": "h1",
+              "label": "t:sections.all.heading_size.options__2.label"
+            },
+            {
+              "value": "h0",
+              "label": "t:sections.all.heading_size.options__3.label"
+            },
+            {
+              "value": "hxl",
+              "label": "t:sections.all.heading_size.options__4.label"
+            },
+            {
+              "value": "hxxl",
+              "label": "t:sections.all.heading_size.options__5.label"
+            }
+          ],
+          "default": "h1",
+          "label": "t:sections.all.heading_size.label"
+        }
+      ]
+    },
+    {
+      "type": "caption",
+      "name": "t:sections.image-with-text.blocks.caption.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "caption",
+          "default": "t:sections.image-with-text.blocks.caption.settings.text.default",
+          "label": "t:sections.image-with-text.blocks.caption.settings.text.label"
+        },
+        {
+          "type": "select",
+          "id": "text_style",
+          "options": [
+            {
+              "value": "subtitle",
+              "label": "t:sections.image-with-text.blocks.caption.settings.text_style.options__1.label"
+            },
+            {
+              "value": "caption-with-letter-spacing",
+              "label": "t:sections.image-with-text.blocks.caption.settings.text_style.options__2.label"
+            }
+          ],
+          "default": "caption-with-letter-spacing",
+          "label": "t:sections.image-with-text.blocks.caption.settings.text_style.label"
+        },
+        {
+          "type": "select",
+          "id": "text_size",
+          "options": [
+            {
+              "value": "small",
+              "label": "t:sections.image-with-text.blocks.caption.settings.caption_size.options__1.label"
+            },
+            {
+              "value": "medium",
+              "label": "t:sections.image-with-text.blocks.caption.settings.caption_size.options__2.label"
+            },
+            {
+              "value": "large",
+              "label": "t:sections.image-with-text.blocks.caption.settings.caption_size.options__3.label"
+            }
+          ],
+          "default": "medium",
+          "label": "t:sections.image-with-text.blocks.caption.settings.caption_size.label"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "t:sections.image-with-text.blocks.text.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text",
+          "default": "t:sections.image-with-text.blocks.text.settings.text.default",
+          "label": "t:sections.image-with-text.blocks.text.settings.text.label"
+        },
+        {
+          "type": "select",
+          "id": "text_style",
+          "options": [
+            {
+              "value": "body",
+              "label": "t:sections.image-with-text.blocks.text.settings.text_style.options__1.label"
+            },
+            {
+              "value": "subtitle",
+              "label": "t:sections.image-with-text.blocks.text.settings.text_style.options__2.label"
+            }
+          ],
+          "default": "body",
+          "label": "t:sections.image-with-text.blocks.text.settings.text_style.label"
+        }
+      ]
+    },
+    {
+      "type": "button",
+      "name": "t:sections.image-with-text.blocks.button.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "button_label",
+          "default": "t:sections.image-with-text.blocks.button.settings.button_label.default",
+          "label": "t:sections.image-with-text.blocks.button.settings.button_label.label",
+          "info": "t:sections.image-with-text.blocks.button.settings.button_label.info"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "t:sections.image-with-text.blocks.button.settings.button_link.label"
+        },
+        {
+          "type": "checkbox",
+          "id": "button_style_secondary",
+          "default": false,
+          "label": "t:sections.image-with-text.blocks.button.settings.outline_button.label"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.image-with-text.presets.name",
+      "blocks": [
+        {
+          "type": "heading"
+        },
+        {
+          "type": "text"
+        },
+        {
+          "type": "button"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
