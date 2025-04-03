@@ -41,42 +41,40 @@
 </div>
 
 <style>
-  /* Стиль для самой сетки */
   .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* создаём колонки */
-    gap: 30px; /* Пространство между видео */
-    justify-content: center; /* Центрирование элементов по горизонтали */
-    padding: 50px 0; /* Отступы сверху и снизу */
-    margin-top: 50px; /* Дополнительный отступ сверху */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px; /* Увеличиваем пространство между видео */
+    justify-content: center; /* Центрируем элементы по горизонтали */
+    padding-top: 50px; /* Отступ сверху */
+    padding-bottom: 50px; /* Отступ снизу */
   }
 
   .grid-item {
-    position: relative; /* Контейнер видео */
-    height: 0; /* Этим ограничиваем высоту */
-    padding-bottom: 56.25%; /* Соотношение 16:9 (56.25%) */
-    width: 100%;
-    border-radius: 10px;
-    overflow: hidden;
-    background-color: #000;
+    width: 30%; /* Ширина видео 30% */
+    max-width: 400px; /* Максимальная ширина 400px */
+    margin-bottom: 30px; /* Отступ снизу */
+    height: auto;
   }
 
-  /* Стиль для контейнера с видео */
   .media-container {
+    position: relative;
+    width: 100%;
+    height: 0; /* Убираем избыточную высоту */
+    padding-bottom: 56.25%; /* Это соотношение сторон 16:9 */
+    overflow: hidden;
+    border-radius: 10px;
+    background-color: #000; /* Фон черный */
+  }
+
+  .custom-video {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #000; /* фон контейнера */
+    object-fit: cover; /* Видео будет заполнять контейнер */
     border-radius: 10px;
-  }
-
-  /* Стиль для самого видео */
-  .custom-video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Видео не будет растягиваться, а будет соответствовать контейнеру */
   }
 </style>
 
@@ -104,7 +102,6 @@
     });
   });
 </script>
-
 
 {% schema %}
 {
