@@ -15,7 +15,7 @@
 <div class="grid">
   <div class="grid-sizer"></div> 
 
-  <div class="grid-item">
+  <div class="grid-item first">
     <div class="media-container">
       <video class="custom-video" muted playsinline>
         <source src="https://res.cloudinary.com/dkscd8svu/video/upload/v1743682048/furnifit_edited_1_xjulyy.mp4" type="video/mp4">
@@ -23,7 +23,7 @@
     </div>
   </div>
 
-  <div class="grid-item">
+  <div class="grid-item second">
     <div class="media-container">
       <video class="custom-video" muted playsinline>
         <source src="https://res.cloudinary.com/dkscd8svu/video/upload/v1743691197/3770034-hd_1920_1080_25fps_v2pbva.mp4" type="video/mp4">
@@ -31,7 +31,7 @@
     </div>
   </div>
 
-  <div class="grid-item">
+  <div class="grid-item third">
     <div class="media-container">
       <video class="custom-video" muted playsinline>
         <source src="https://res.cloudinary.com/dkscd8svu/video/upload/v1743691321/4231455-hd_1920_1080_25fps_qml2wc.mp4" type="video/mp4">
@@ -82,43 +82,22 @@
     object-fit: cover;
   }
 
-  .grid-item:nth-child(1) {
-    grid-row: 1;
+  /* Шахматное расположение элементов */
+  .first {
+    grid-column: 1 / 2; /* Первая колонка */
+    grid-row: 1; /* На верхней строке */
   }
 
-  .grid-item:nth-child(2) {
-    grid-row: 2;
+  .second {
+    grid-column: 1 / 2; /* В первой колонке */
+    grid-row: 2; /* На нижней строке */
   }
 
-  .grid-item:nth-child(3) {
-    grid-row: 1;
+  .third {
+    grid-column: 3 / 4; /* Третья колонка */
+    grid-row: 1; /* На верхней строке */
   }
 </style>
-
-<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
-<script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    var grid = document.querySelector('.grid');
-    imagesLoaded(grid, function() {
-      new Masonry(grid, {
-        itemSelector: '.grid-item',
-        columnWidth: '.grid-sizer',
-        percentPosition: true
-      });
-    });
-  });
-
-  document.querySelectorAll('.custom-video').forEach(video => {
-    video.addEventListener('mouseenter', () => {
-      video.play();
-    });
-    video.addEventListener('mouseleave', () => {
-      video.pause();
-      video.currentTime = 0;
-    });
-  });
-</script>
 
 <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
 <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
