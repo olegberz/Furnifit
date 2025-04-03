@@ -18,7 +18,7 @@
   <div class="grid-item">
     <div class="media-container">
       <video class="custom-video" autoplay loop muted playsinline>
-  <source src="https://res.cloudinary.com/dkscd8svu/video/upload/v1743682048/furnifit_edited_1_xjulyy.mp4" type="video/mp4">
+        <source src="https://res.cloudinary.com/dkscd8svu/video/upload/v1743682048/furnifit_edited_1_xjulyy.mp4" type="video/mp4">
       </video>
     </div>
   </div>
@@ -54,14 +54,14 @@
   .media-container {
     position: relative;
     width: 100%;
-    aspect-ratio: 9 / 16; 
+    aspect-ratio: 9 / 16; /* Задаёт фиксированное соотношение сторон */
     overflow: hidden;
     border-radius: 10px;
   }
 
   .media-container iframe {
     width: 100%;
-    height: 100%; 
+    height: 100%; /* Заставляет `iframe` занимать всю высоту контейнера */
     display: block;
   }
 
@@ -79,11 +79,10 @@
   .custom-video {
     width: 100%;
     border-radius: 10px;
-}
-  
+    object-fit: cover;
+  }
 </style>
 
-/* Mansory librrary */
 <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
 <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
 <script>
@@ -101,10 +100,16 @@
 
 <script>
   document.querySelectorAll('.custom-video').forEach(video => {
-    video.addEventListener('mouseenter', () => video.play());
-    video.addEventListener('mouseleave', () => video.pause());
-});
+    video.addEventListener('mouseenter', () => {
+      video.play(); // Воспроизведение видео при наведении
+    });
+    video.addEventListener('mouseleave', () => {
+      video.pause(); // Остановка видео при убирании курсора
+      video.currentTime = 0; // Сброс к началу (заставка)
+    });
+  });
 </script>
+
 
 {% schema %}
 {
