@@ -12,12 +12,12 @@
   }
 {%- endstyle -%}
 
- <div class="grid" data-masonry='{"itemSelector": ".grid-item", "columnWidth": ".grid-sizer", "percentPosition": true}'>
+<div class="grid">
   <div class="grid-sizer"></div> 
 
   <div class="grid-item">
     <div class="media-container">
-      <iframe src="https://assets.pinterest.com/ext/embed.html?id=AbGadrC3dLjNVuhd5UbzxtdB3rRgJOIE0RTaDOGMuRS4Bu7DVNPW3OldARQjdXXAGtPhyhH4qTbeEDpciuLWGj4" 
+      <iframe src="https://assets.pinterest.com/ext/embed.html?id=AbGadrC3dLjNVuhd5UbzxtdB3rRgJOIE0RTaDOGMuRS4Bu7DVNPW3OldARQjdXXAGtPhyhH4qTbeEDpciuLWGj4"
               frameborder="0" scrolling="no"></iframe>
       <h2 class="image-text">Your Text Here</h2>
     </div>
@@ -25,14 +25,16 @@
 
   <div class="grid-item">
     <div class="media-container">
-     <iframe src="https://assets.pinterest.com/ext/embed.html?id=3940718419951181" height="714" width="345" frameborder="0" scrolling="no" ></iframe>
+      <iframe src="https://assets.pinterest.com/ext/embed.html?id=3940718419951181" 
+              frameborder="0" scrolling="no"></iframe>
       <h2 class="image-text">Your Text Here</h2>
     </div>
   </div>
 
   <div class="grid-item">
     <div class="media-container">
-      <iframe src="https://assets.pinterest.com/ext/embed.html?id=1618549863489523" height="714" width="345" frameborder="0" scrolling="no" ></iframe>
+      <iframe src="https://assets.pinterest.com/ext/embed.html?id=1618549863489523" 
+              frameborder="0" scrolling="no"></iframe>
       <h2 class="image-text">Your Text Here</h2>
     </div>
   </div>
@@ -41,6 +43,7 @@
 <style>
   .grid {
     display: flex;
+    flex-wrap: wrap;
     gap: 10px;
   }
 
@@ -51,14 +54,14 @@
   .media-container {
     position: relative;
     width: 100%;
+    aspect-ratio: 9 / 16; /* Задаёт фиксированное соотношение сторон */
     overflow: hidden;
     border-radius: 10px;
   }
 
-  .media-container img,
   .media-container iframe {
     width: 100%;
-    height: auto;
+    height: 100%; /* Заставляет `iframe` занимать всю высоту контейнера */
     display: block;
   }
 
@@ -74,7 +77,21 @@
   }
 </style>
 
-<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script>
+<!-- Подключаем Masonry -->
+<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+<script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var grid = document.querySelector('.grid');
+    imagesLoaded(grid, function() {
+      new Masonry(grid, {
+        itemSelector: '.grid-item',
+        columnWidth: '.grid-sizer',
+        percentPosition: true
+      });
+    });
+  });
+</script>
 
 {% schema %}
 {
