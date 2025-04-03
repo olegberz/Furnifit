@@ -100,21 +100,10 @@
 </script>
 
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const iframes = document.querySelectorAll(".media-container iframe");
-
-    iframes.forEach(iframe => {
-      iframe.parentElement.addEventListener("mouseenter", function () {
-        let src = iframe.getAttribute("src");
-        iframe.setAttribute("src", src); // Перезагружаем iframe для старта видео
-      });
-
-      iframe.parentElement.addEventListener("mouseleave", function () {
-        let src = iframe.getAttribute("src");
-        iframe.setAttribute("src", src); // Перезагружаем, чтобы остановить
-      });
-    });
-  });
+  document.querySelectorAll('.custom-video').forEach(video => {
+    video.addEventListener('mouseenter', () => video.play());
+    video.addEventListener('mouseleave', () => video.pause());
+});
 </script>
 
 {% schema %}
