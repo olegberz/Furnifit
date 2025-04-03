@@ -99,11 +99,13 @@
 
     iframes.forEach(iframe => {
       iframe.parentElement.addEventListener("mouseenter", function () {
-        iframe.src += "&autoplay=1"; // Добавляем autoplay
+        let src = iframe.getAttribute("src");
+        iframe.setAttribute("src", src); // Перезагружаем iframe для старта видео
       });
 
       iframe.parentElement.addEventListener("mouseleave", function () {
-        iframe.src = iframe.src.replace("&autoplay=1", ""); // Убираем autoplay
+        let src = iframe.getAttribute("src");
+        iframe.setAttribute("src", src); // Перезагружаем, чтобы остановить
       });
     });
   });
