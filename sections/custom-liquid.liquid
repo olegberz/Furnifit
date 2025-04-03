@@ -17,25 +17,28 @@
 
   <div class="grid-item">
     <div class="media-container">
-      <video class="custom-video" autoplay loop muted playsinline>
+      <video class="custom-video" preload="auto" muted loop playsinline>
         <source src="https://res.cloudinary.com/dkscd8svu/video/upload/v1743682048/furnifit_edited_1_xjulyy.mp4" type="video/mp4">
       </video>
+      <button class="play-button" onclick="playVideo(this)">Play</button>
     </div>
   </div>
 
   <div class="grid-item">
     <div class="media-container">
-       <video class="custom-video" autoplay loop muted playsinline>
+      <video class="custom-video" preload="auto" muted loop playsinline>
         <source src="https://res.cloudinary.com/dkscd8svu/video/upload/v1743691197/3770034-hd_1920_1080_25fps_v2pbva.mp4" type="video/mp4">
       </video>
+      <button class="play-button" onclick="playVideo(this)">Play</button>
     </div>
   </div>
 
   <div class="grid-item">
     <div class="media-container">
-       <video class="custom-video" autoplay loop muted playsinline>
+      <video class="custom-video" preload="auto" muted loop playsinline>
         <source src="https://res.cloudinary.com/dkscd8svu/video/upload/v1743691321/4231455-hd_1920_1080_25fps_qml2wc.mp4" type="video/mp4">
       </video>
+      <button class="play-button" onclick="playVideo(this)">Play</button>
     </div>
   </div>
 </div>
@@ -59,47 +62,69 @@
     border-radius: 10px;
   }
 
-  .image-text {
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
-    padding: 5px 10px;
-    font-size: 16px;
-    border-radius: 5px;
-  }
-
   .custom-video {
     width: 100%;
     border-radius: 10px;
     object-fit: cover;
+    display: block;
+    opacity: 0.8;
+  }
+
+  .play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 24px;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: block;
+    cursor: pointer;
+    z-index: 2;
+  }
+
+  .play-button:focus {
+    outline: none;
   }
 </style>
 
-<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
-<script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
 <script>
-  document.addEventListener("DOMContentLoaded", function() {
-    var grid = document.querySelector('.grid');
-    imagesLoaded(grid, function() {
-      new Masonry(grid, {
-        itemSelector: '.grid-item',
-        columnWidth: '.grid-sizer',
-        percentPosition: true
-      });
-    });
-  });
-</script>
+  function playVideo(button) {
+    const video = button.parentElement.querySelector('video');
+    video.play();
+    button.style.display = 'none'; // Скрыть кнопку после нажатия
+  }
 
-<script>
   document.querySelectorAll('.custom-video').forEach(video => {
-    video.addEventListener('mouseenter', () => {
-      video.play(); // Воспроизведение видео при наведении
+    // Останавливаем видео и показываем кнопку, если оно не играет
+    video.addEventListener('pause', function() {
+      const button = video.parentElement.querySelector('.play-button');
+      button.style.display = 'block'; // Показать кнопку, если видео на паузе
     });
-    video.addEventListener('mouseleave', () => {
-      video.pause(); // Остановка видео при убирании курсора
-      video.currentTime = 0; // Сброс к началу (заставка)
+
+    // Если курсор на видео — играем его
+    video.addEventListener('mouseenter', function() {
+      const button = video.parentElement.querySelector('.play-button');
+      video.play();
+      button.style.display = 'none'; // Скрыть кнопку при начале воспроизведения
+    });
+
+    // Когда курсор уходит — видео останавливается и кнопка появляется
+    video.addEventListener('mouseleave', function() {
+      video.pause();
+      video.currentTime = 0; // Сбросить к началу видео
+      const button = video.parentElement.querySelector('.play-button');
+      button.style.display = 'block'; // Показать кнопку при остановке
+    });
+
+    // Для случая, если видео завершилось — вернуть кнопку
+    video.addEventListener('ended', function() {
+      const button = video.parentElement.querySelector('.play-button');
+      button.style.display = 'block'; // Показать кнопку после окончания видео
     });
   });
 </script>
