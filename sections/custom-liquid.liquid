@@ -41,33 +41,42 @@
 </div>
 
 <style>
+  /* Стиль для самой сетки */
   .grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Три колонки */
-    gap: 20px; /* Пространство между видео */
-    margin: 0 auto; /* Центрирование */
-    padding-top: 50px; /* Дополнительное пространство сверху */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* создаём колонки */
+    gap: 30px; /* Пространство между видео */
+    justify-content: center; /* Центрирование элементов по горизонтали */
+    padding: 50px 0; /* Отступы сверху и снизу */
+    margin-top: 50px; /* Дополнительный отступ сверху */
   }
 
   .grid-item {
-    position: relative;
+    position: relative; /* Контейнер видео */
+    height: 0; /* Этим ограничиваем высоту */
+    padding-bottom: 56.25%; /* Соотношение 16:9 (56.25%) */
+    width: 100%;
+    border-radius: 10px;
     overflow: hidden;
-    height: 300px; /* Фиксированная высота для каждого элемента */
+    background-color: #000;
   }
 
+  /* Стиль для контейнера с видео */
   .media-container {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #000; /* Черный фон для контейнера */
+    background-color: #000; /* фон контейнера */
+    border-radius: 10px;
   }
 
+  /* Стиль для самого видео */
   .custom-video {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Заполнение контейнера без искажения */
+    object-fit: cover; /* Видео не будет растягиваться, а будет соответствовать контейнеру */
   }
 </style>
 
@@ -82,6 +91,16 @@
         columnWidth: '.grid-sizer',
         percentPosition: true
       });
+    });
+  });
+
+  document.querySelectorAll('.custom-video').forEach(video => {
+    video.addEventListener('mouseenter', () => {
+      video.play(); // Воспроизведение видео при наведении
+    });
+    video.addEventListener('mouseleave', () => {
+      video.pause(); // Остановка видео при убирании курсора
+      video.currentTime = 0; // Сброс к началу
     });
   });
 </script>
