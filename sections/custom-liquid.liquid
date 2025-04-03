@@ -14,18 +14,9 @@
 
   <div class="grid" data-masonry='{"itemSelector": ".grid-item", "columnWidth": ".grid-sizer", "percentPosition": true}'>
     <div class="grid-sizer"></div> 
-    <div class="grid-item"><img src="{{ product.featured_image | img_url: '600x' }}"
-     width="{{ product.featured_image.width }}"
-     height="{{ product.featured_image.height }}"
-     alt="{{ product.title }}">
-    <div class="grid-item"><img src="{{ product.featured_image | img_url: '600x' }}"
-     width="{{ product.featured_image.width }}"
-     height="{{ product.featured_image.height }}"
-     alt="{{ product.title }}">
-    <div class="grid-item"<img src="{{ product.featured_image | img_url: '600x' }}"
-     width="{{ product.featured_image.width }}"
-     height="{{ product.featured_image.height }}"
-     alt="{{ product.title }}">
+    <div class="grid-item"><img src="https://pin.it/6ObbjB4eA" width="600" height="400" alt="Product1"></div>
+    <div class="grid-item"><img src="https://pin.it/4aig8zC7P" width="600" height="400" alt="Product2"></div>
+    <div class="grid-item"><img src="https://pin.it/7jgkLpe78" width="600" height="400" alt="Product3"></div>
 </div>
 
 <style>
@@ -38,6 +29,8 @@
   display: block;
 }
 </style>
+
+<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script>
 
 {% schema %}
 {
