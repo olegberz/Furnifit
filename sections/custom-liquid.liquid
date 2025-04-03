@@ -25,17 +25,17 @@
 
   <div class="grid-item">
     <div class="media-container">
-      <iframe src="https://res.cloudinary.com/dkscd8svu/video/upload/v1743691197/3770034-hd_1920_1080_25fps_v2pbva.mp4" 
-              frameborder="0" scrolling="no"></iframe>
-      <h2 class="image-text">Your Text Here</h2>
+       <video class="custom-video" autoplay loop muted playsinline>
+        <source src="https://res.cloudinary.com/dkscd8svu/video/upload/v1743691197/3770034-hd_1920_1080_25fps_v2pbva.mp4" type="video/mp4">
+      </video>
     </div>
   </div>
 
   <div class="grid-item">
     <div class="media-container">
-      <iframe src="https://assets.pinterest.com/ext/embed.html?id=1618549863489523" 
-              frameborder="0" scrolling="no"></iframe>
-      <h2 class="image-text">Your Text Here</h2>
+       <video class="custom-video" autoplay loop muted playsinline>
+        <source src="https://res.cloudinary.com/dkscd8svu/video/upload/v1743691321/4231455-hd_1920_1080_25fps_qml2wc.mp4" type="video/mp4">
+      </video>
     </div>
   </div>
 </div>
@@ -57,12 +57,6 @@
     aspect-ratio: 9 / 16; /* Задаёт фиксированное соотношение сторон */
     overflow: hidden;
     border-radius: 10px;
-  }
-
-  .media-container iframe {
-    width: 100%;
-    height: 100%; /* Заставляет `iframe` занимать всю высоту контейнера */
-    display: block;
   }
 
   .image-text {
