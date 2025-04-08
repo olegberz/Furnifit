@@ -61,16 +61,11 @@
     object-fit: cover;
     display: block;
     border-radius: 8px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
   }
 
   .grid-item:hover video {
-    transform: scale(0.95) translateY(-10px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  }
-
-  .grid-item video.active {
-    transition: transform 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   }
 </style>
 
@@ -80,11 +75,11 @@
 
 <script>
   AOS.init({
-    offset: 200, 
-    delay: 0, 
-    duration: 1000,  
-    easing: 'ease-out', 
-    once: true, 
+    offset: 200,
+    delay: 0,
+    duration: 1000,
+    easing: 'ease-out',
+    once: true,
   });
 
   document.querySelectorAll('.grid-item video').forEach(video => {
@@ -113,8 +108,8 @@
       const centerX = bounds.width / 2;
       const centerY = bounds.height / 2;
 
-      const angleX = (centerX - x) / centerX * 20;  // угол наклона по оси X
-      const angleY = (centerY - y) / centerY * 20;  // угол наклона по оси Y
+      const angleX = (centerX - x) / centerX * 10;  // Уменьшил силу наклона
+      const angleY = (centerY - y) / centerY * 10;  // Уменьшил силу наклона
 
       video.style.transform = `rotateX(${angleY}deg) rotateY(${angleX}deg)`;
     });
@@ -134,7 +129,6 @@
     });
   });
 </script>
-
 
 
 {% schema %}
