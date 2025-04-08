@@ -68,35 +68,34 @@
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 
 <script>
-  // Инициализация AOS
-  AOS.init({
-    offset: 200,  // Начинается анимация, когда элемент будет на 200px от экрана
-    delay: 0,  // Задержка для каждого элемента
-    duration: 1000,  // Длительность анимации
-    easing: 'ease-out',  // Плавность анимации
-    once: true,  // Анимация будет выполняться один раз
+AOS.init({
+  offset: 200,
+  delay: 0,
+  duration: 1000,
+  easing: 'ease-out',
+  once: true,
+});
+
+document.querySelectorAll('.grid-item video').forEach(video => {
+  video.addEventListener('mouseenter', () => {
+    video.play();
+  });
+  video.addEventListener('mouseleave', () => {
+    video.pause();
+    video.currentTime = 0;
+    video.style.transform = 'translate(0, 0)';
   });
 
-  // Для видео, чтобы они начинали воспроизводиться при наведении (для десктопа)
-  document.querySelectorAll('.grid-item video').forEach(video => {
-    video.addEventListener('mouseenter', () => {
-      video.play();
-    });
-    video.addEventListener('mouseleave', () => {
-      video.pause();
-      video.currentTime = 0;
-    });
+  video.addEventListener('mousemove', (e) => {
+    const videoRect = video.getBoundingClientRect();
+    const videoCenterX = videoRect.left + videoRect.width / 2;
+    const videoCenterY = videoRect.top + videoRect.height / 2;
+    const offsetX = (e.clientX - videoCenterX) / videoRect.width;
+    const offsetY = (e.clientY - videoCenterY) / videoRect.height;
 
-    // Для мобильных устройств
-    video.addEventListener('touchstart', () => {
-      if (video.paused) {
-        video.play();
-      } else {
-        video.pause();
-        video.currentTime = 0;
-      }
-    });
+    video.style.transform = `translate(${offsetX * 10}px, ${offsetY * 10}px)`;
   });
+});
 </script>
 
 
