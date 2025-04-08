@@ -61,11 +61,12 @@
     object-fit: cover;
     display: block;
     border-radius: 8px;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
 
   .grid-item:hover video {
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transform: scale(0.95) translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   }
 </style>
 
@@ -75,11 +76,11 @@
 
 <script>
   AOS.init({
-    offset: 200,
-    delay: 0,
-    duration: 1000,
-    easing: 'ease-out',
-    once: true,
+    offset: 200, 
+    delay: 0, 
+    duration: 1000,  
+    easing: 'ease-out', 
+    once: true, 
   });
 
   document.querySelectorAll('.grid-item video').forEach(video => {
@@ -98,24 +99,6 @@
         video.pause();
         video.currentTime = 0;
       }
-    });
-
-    video.addEventListener('mousemove', (e) => {
-      const bounds = video.getBoundingClientRect();
-      const x = e.clientX - bounds.left;
-      const y = e.clientY - bounds.top;
-
-      const centerX = bounds.width / 2;
-      const centerY = bounds.height / 2;
-
-      const angleX = (centerX - x) / centerX * 10;  // Уменьшил силу наклона
-      const angleY = (centerY - y) / centerY * 10;  // Уменьшил силу наклона
-
-      video.style.transform = `rotateX(${angleY}deg) rotateY(${angleX}deg)`;
-    });
-
-    video.addEventListener('mouseleave', () => {
-      video.style.transform = 'rotateX(0) rotateY(0)';
     });
   });
 
