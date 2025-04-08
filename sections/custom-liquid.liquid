@@ -57,15 +57,15 @@ body {
 
 .grid {
   display: flex;
-  justify-content: flex-start; /* Оставляем элементы слева */
-  align-items: flex-start; /* Убираем любые вертикальные выравнивания */
+  justify-content: flex-start; 
+  align-items: flex-start; 
   flex-wrap: wrap;
   gap: 15px;
   width: 100%;
   padding: 0 15px;
   box-sizing: border-box;
-  flex-grow: 1; /* Позволяет растягивать сетку на оставшуюся часть экрана */
-  margin-left: 250px; /* Перемещает контейнер вправо */
+  flex-grow: 1; 
+  margin-left: 250px; 
 }
 
 .grid-item {
@@ -74,7 +74,7 @@ body {
   margin-bottom: 10px;
   padding: 10px;
   box-sizing: border-box;
-  overflow: hidden; /* Скрывает контент, выходящий за пределы контейнера */
+  overflow: hidden;
   display: flex;
   flex-direction: column;
 }
@@ -90,11 +90,10 @@ body {
 .grid-item blockquote {
   margin-top: 15px;
   margin-bottom: 10px;
-  flex-grow: 1; /* Это заставит твит занимать остаточное пространство */
-  overflow: hidden; /* Скрывает текст, если он выходит за пределы */
+  flex-grow: 1;
+  overflow: hidden; 
 }
 
-/* Чтобы обеспечить нормальное поведение для всего содержимого */
 .grid-item {
   display: flex;
   flex-direction: column;
