@@ -61,7 +61,7 @@
     object-fit: cover;
     display: block;
     border-radius: 8px;
-    transition: transform 0.2s ease;
+    transition: transform 0.2s ease; /* Плавность эффекта */
   }
 </style>
 
@@ -104,10 +104,10 @@
       const centerX = bounds.width / 2;
       const centerY = bounds.height / 2;
 
-      const angleX = (centerX - x) / centerX * 3;  // Уменьшена сила наклона
-      const angleY = (centerY - y) / centerY * 3;  // Уменьшена сила наклона
+      const angleX = (centerX - x) / centerX * 5;  // Уменьшена сила наклона
+      const angleY = (centerY - y) / centerY * 5;  // Уменьшена сила наклона
 
-      // Убираем масштабирование, оставляем только наклон
+      // Применяем наклон только по осям X и Y, без изменений положения
       video.style.transform = `rotateX(${angleY}deg) rotateY(${angleX}deg)`;
     });
 
