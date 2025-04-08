@@ -12,23 +12,26 @@
   }
 {%- endstyle -%}
 
+<!-- Подключение AOS (Animate on Scroll) -->
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
 <div class="grid" data-masonry='{"itemSelector": ".grid-item", "columnWidth": ".grid-sizer", "percentPosition": true}'>
   <div class="grid-sizer"></div>
 
-  <div class="grid-item">
-    <video class="fade-in" src="https://res.cloudinary.com/dkscd8svu/video/upload/v1743691321/4231455-hd_1920_1080_25fps_qml2wc.mp4" loop muted playsinline></video>
+  <div class="grid-item" data-aos="fade-up" data-aos-duration="1000">
+    <video src="https://res.cloudinary.com/dkscd8svu/video/upload/v1743691321/4231455-hd_1920_1080_25fps_qml2wc.mp4" loop muted playsinline></video>
   </div>
 
-  <div class="grid-item">
-    <video class="fade-in" src="https://res.cloudinary.com/dkscd8svu/video/upload/v1743691197/3770034-hd_1920_1080_25fps_v2pbva.mp4" loop muted playsinline></video>
+  <div class="grid-item" data-aos="fade-up" data-aos-duration="1000">
+    <video src="https://res.cloudinary.com/dkscd8svu/video/upload/v1743691197/3770034-hd_1920_1080_25fps_v2pbva.mp4" loop muted playsinline></video>
   </div>
 
-  <div class="grid-item">
-    <video class="fade-in" src="https://res.cloudinary.com/dkscd8svu/video/upload/v1743682048/furnifit_edited_1_xjulyy.mp4" loop muted playsinline></video>
+  <div class="grid-item" data-aos="fade-up" data-aos-duration="1000">
+    <video src="https://res.cloudinary.com/dkscd8svu/video/upload/v1743682048/furnifit_edited_1_xjulyy.mp4" loop muted playsinline></video>
   </div>
 
-  <div class="grid-item">
-    <video class="fade-in" src="https://res.cloudinary.com/dkscd8svu/video/upload/v1744094545/4065218-uhd_4096_2160_25fps_jq1t1x.mp4" loop muted playsinline></video>
+  <div class="grid-item" data-aos="fade-up" data-aos-duration="1000">
+    <video src="https://res.cloudinary.com/dkscd8svu/video/upload/v1744094545/4065218-uhd_4096_2160_25fps_jq1t1x.mp4" loop muted playsinline></video>
   </div>
 </div>
 
@@ -49,14 +52,6 @@
     margin-bottom: 10px;
     padding: 10px;
     box-sizing: border-box;
-    opacity: 0; /* Элементы изначально скрыты */
-    transform: translateY(50px); /* Элементы изначально немного ниже */
-    transition: opacity 1s ease, transform 1s ease; /* Плавный переход */
-  }
-
-  .grid-item.show {
-    opacity: 1; /* Когда элемент становится видимым, он становится видимым */
-    transform: translateY(0); /* Элемент поднимается */
   }
 
   .grid-item video {
@@ -70,27 +65,17 @@
 
 <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script>
 
+<!-- Подключение AOS (Animate on Scroll) JS -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
 <script>
-  // Функция для активации плавного появления
-  function handleIntersection(entries, observer) {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('show'); // Когда видео появляется, активируется анимация
-        observer.unobserve(entry.target); // Останавливаем наблюдение за этим элементом
-      }
-    });
-  }
-
-  const observerOptions = {
-    threshold: 0.25 // Срабатывает, когда хотя бы 25% элемента на экране
-  };
-
-  // Создаём новый IntersectionObserver
-  const observer = new IntersectionObserver(handleIntersection, observerOptions);
-
-  // Наблюдаем за всеми видео
-  document.querySelectorAll('.fade-in').forEach(video => {
-    observer.observe(video);
+  // Инициализация AOS
+  AOS.init({
+    offset: 200,  // Начинается анимация, когда элемент будет на 200px от экрана
+    delay: 0,  // Задержка для каждого элемента
+    duration: 1000,  // Длительность анимации
+    easing: 'ease-out',  // Плавность анимации
+    once: true,  // Анимация будет выполняться один раз
   });
 
   // Для видео, чтобы они начинали воспроизводиться при наведении (для десктопа)
@@ -114,6 +99,7 @@
     });
   });
 </script>
+
 
 {% schema %}
 {
