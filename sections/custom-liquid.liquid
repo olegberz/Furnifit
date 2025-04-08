@@ -35,12 +35,12 @@
 <style>
   .grid {
     display: flex;
-    justify-content: center; /* Центрируем сетку по горизонтали */
+    justify-content: space-between; /* Распределяет элементы с отступами между ними */
     flex-wrap: wrap;
     gap: 15px;
-    width: 100%;  /* Сетка занимает всю доступную ширину */
-    max-width: 950px; /* Ограничиваем максимальную ширину сетки */
-    margin: 0 auto; /* Центрируем сам контейнер */
+    width: 100%;
+    padding: 0 15px; /* Отступы справа и слева от всей сетки */
+    box-sizing: border-box;
   }
 
   .grid-item {
@@ -54,7 +54,7 @@
   .grid-item video {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Видео будет обрезаться, чтобы заполнило контейнер */
+    object-fit: cover;
     display: block;
     border-radius: 8px;
   }
