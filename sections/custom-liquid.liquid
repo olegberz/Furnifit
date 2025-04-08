@@ -61,6 +61,9 @@
     margin-bottom: 10px;
     padding: 10px;
     box-sizing: border-box;
+    overflow: hidden; /* Скрывает контент, выходящий за пределы контейнера */
+    display: flex;
+    flex-direction: column;
   }
 
   .grid-item video {
@@ -71,10 +74,18 @@
     border-radius: 8px;
   }
 
-  /* Дополнительный стиль для контейнера с твитом */
   .grid-item blockquote {
-    margin-top: 20px;
+    margin-top: 15px;
     margin-bottom: 10px;
+    flex-grow: 1; /* Это заставит твит занимать остаточное пространство */
+    overflow: hidden; /* Скрывает текст, если он выходит за пределы */
+  }
+
+  /* Чтобы обеспечить нормальное поведение для всего содержимого */
+  .grid-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 </style>
 
