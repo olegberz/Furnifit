@@ -93,10 +93,11 @@ document.querySelectorAll('.grid-item video').forEach(video => {
     const offsetX = (e.clientX - videoCenterX) / videoRect.width;
     const offsetY = (e.clientY - videoCenterY) / videoRect.height;
 
-    const moveX = offsetX * 10;
-    const moveY = offsetY * 10;
+    const translateX = offsetX * 10;
+    const translateY = offsetY * 10;
 
-    video.style.transform = `translate(${moveX}px, ${-moveY}px)`;
+    // Эффект: одна сторона поднимется, другая опустится
+    video.style.transform = `translate(${translateX}px, ${-translateY}px)`;
   });
 });
 </script>
