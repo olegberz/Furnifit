@@ -138,21 +138,31 @@ document.querySelectorAll('.grid-item video').forEach(video => {
   });
 });
 
-// Функция для плавного исчезновения элементов при прокрутке
+// Функция для плавного исчезновения элементов при прокрутке с использованием IntersectionObserver
 const fadeElementsOnScroll = () => {
-  const elements = document.querySelectorAll('.grid-item');
-  elements.forEach(element => {
-    const rect = element.getBoundingClientRect();
-    if (rect.top <= window.innerHeight && rect.bottom >= 0) {
-      element.style.opacity = '1';
-      element.style.transition = 'opacity 1s ease-out';
-    } else {
-      element.style.opacity = '0';
-    }
+  const options = {
+    root: null, // use the viewport as root
+    rootMargin: '0px',
+    threshold: 0.2 // Порог видимости: 20%
+  };
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      const element = entry.target;
+      if (entry.isIntersecting) {
+        element.style.opacity = '1';
+        element.style.transition = 'opacity 1s ease-out';
+      } else {
+        element.style.opacity = '0';
+      }
+    });
+  }, options);
+
+  document.querySelectorAll('.grid-item').forEach(item => {
+    observer.observe(item);
   });
 };
 
-window.addEventListener('scroll', fadeElementsOnScroll);
 window.addEventListener('load', fadeElementsOnScroll);
 </script>
 
