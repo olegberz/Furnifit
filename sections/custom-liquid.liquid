@@ -93,7 +93,10 @@ document.querySelectorAll('.grid-item video').forEach(video => {
     const offsetX = (e.clientX - videoCenterX) / videoRect.width;
     const offsetY = (e.clientY - videoCenterY) / videoRect.height;
 
-    video.style.transform = `translate(${offsetX * 10}px, ${offsetY * 10}px)`;
+    const moveX = offsetX * 10;
+    const moveY = offsetY * 10;
+
+    video.style.transform = `translate(${moveX}px, ${-moveY}px)`;
   });
 });
 </script>
