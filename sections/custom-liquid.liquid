@@ -50,54 +50,54 @@
 
 <style>
   body {
-    min-height: 100vh; /* Минимальная высота страницы */
-    display: flex;
-    flex-direction: column;
-  }
+  min-height: 100vh; /* Минимальная высота страницы */
+  display: flex;
+  flex-direction: column;
+}
 
-  .grid {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 15px;
-    width: 100%;
-    padding: 0 15px;
-    box-sizing: border-box;
-    flex-grow: 1; /* Позволяет растягивать сетку на оставшуюся часть экрана */
-  }
+.grid {
+  display: flex;
+  justify-content: flex-end; /* Сдвигает всю сетку вправо */
+  flex-wrap: wrap;
+  gap: 15px;
+  width: 100%;
+  padding: 0 15px;
+  box-sizing: border-box;
+  flex-grow: 1; /* Позволяет растягивать сетку на оставшуюся часть экрана */
+}
 
-  .grid-item {
-    width: 450px;
-    height: 640px;
-    margin-bottom: 10px;
-    padding: 10px;
-    box-sizing: border-box;
-    overflow: hidden; /* Скрывает контент, выходящий за пределы контейнера */
-    display: flex;
-    flex-direction: column;
-  }
+.grid-item {
+  width: 450px;
+  height: 640px;
+  margin-bottom: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+  overflow: hidden; /* Скрывает контент, выходящий за пределы контейнера */
+  display: flex;
+  flex-direction: column;
+}
 
-  .grid-item video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    border-radius: 8px;
-  }
+.grid-item video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 8px;
+}
 
-  .grid-item blockquote {
-    margin-top: 15px;
-    margin-bottom: 10px;
-    flex-grow: 1; /* Это заставит твит занимать остаточное пространство */
-    overflow: hidden; /* Скрывает текст, если он выходит за пределы */
-  }
+.grid-item blockquote {
+  margin-top: 15px;
+  margin-bottom: 10px;
+  flex-grow: 1; /* Это заставит твит занимать остаточное пространство */
+  overflow: hidden; /* Скрывает текст, если он выходит за пределы */
+}
 
-  /* Чтобы обеспечить нормальное поведение для всего содержимого */
-  .grid-item {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
+/* Чтобы обеспечить нормальное поведение для всего содержимого */
+.grid-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 </style>
 
 <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script>
