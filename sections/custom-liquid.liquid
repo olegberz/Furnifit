@@ -68,22 +68,14 @@
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 
 <script>
- document.querySelectorAll('.grid-item video').forEach(video => {
+document.querySelectorAll('.grid-item video').forEach(video => {
   video.addEventListener('mouseenter', () => {
     video.play();
   });
   video.addEventListener('mouseleave', () => {
     video.pause();
     video.currentTime = 0;
-  });
-
-  video.addEventListener('touchstart', () => {
-    if (video.paused) {
-      video.play();
-    } else {
-      video.pause();
-      video.currentTime = 0;
-    }
+    video.style.transform = 'translate(0, 0)';
   });
 
   video.addEventListener('mousemove', (e) => {
@@ -97,11 +89,8 @@
     const movementX = deltaX * 0.05;
     const movementY = deltaY * 0.05;
 
+    video.style.transition = 'transform 0.1s ease-out'; // Плавный переход
     video.style.transform = `translate(${movementX}px, ${movementY}px)`;
-  });
-
-  video.addEventListener('mouseleave', () => {
-    video.style.transform = 'translate(0, 0)';
   });
 });
 </script>
