@@ -18,7 +18,7 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Furnifit-04.jpg",
-            "image_width": 140,
+            "image_width": 200,
             "alignment": ""
           }
         },
@@ -35,12 +35,20 @@
             "heading": "Support",
             "menu": "support"
           }
+        },
+        "link_list_Kpfmnt": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Quick links",
+            "menu": "company"
+          }
         }
       },
       "block_order": [
         "image_LgJx8i",
         "link_list_X84fVD",
-        "link_list_eibHgp"
+        "link_list_eibHgp",
+        "link_list_Kpfmnt"
       ],
       "settings": {
         "color_scheme": "scheme-3",
