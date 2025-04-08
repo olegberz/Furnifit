@@ -21,7 +21,7 @@
 
   <div class="grid-item" data-aos="fade-up" data-aos-duration="1000">
     <video src="https://res.cloudinary.com/dkscd8svu/video/upload/v1743691321/4231455-hd_1920_1080_25fps_qml2wc.mp4" loop muted playsinline></video>
-    <blockquote class="twitter-tweet" data-dnt="true"><p lang="en" dir="ltr">Welcome to 𝕏, the group chat of Earth</p>&mdash; Elon Musk (@elonmusk) <a href="https://twitter.com/elonmusk/status/1909480041232449635?ref_src=twsrc%5Etfw">April 8, 2025</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <blockquote class="twitter-tweet" data-dnt="true"><p lang="en" dir="ltr">Welcome to 𝕏, the group chat of Earth</p>&mdash; Elon Musk (@elonmusk) <a href="https://twitter.com/elonmusk/status/1909480041232449635?ref_src=twsrc%5Etfw">April 8, 2025</a></blockquote>
   </div>
 
   <div class="grid-item" data-aos="fade-up" data-aos-duration="1000">
@@ -38,19 +38,26 @@
 </div>
 
 <style>
+  body {
+    min-height: 100vh; /* Минимальная высота страницы */
+    display: flex;
+    flex-direction: column;
+  }
+
   .grid {
     display: flex;
-    justify-content: center; /* Центрирует все элементы */
+    justify-content: center;
     flex-wrap: wrap;
     gap: 15px;
     width: 100%;
-    padding: 0 15px; /* Отступы с обеих сторон */
+    padding: 0 15px;
     box-sizing: border-box;
+    flex-grow: 1; /* Позволяет растягивать сетку на оставшуюся часть экрана */
   }
 
   .grid-item {
-    width: 450px;  /* Ширина видео */
-    height: 640px; /* Высота видео */
+    width: 450px;
+    height: 640px;
     margin-bottom: 10px;
     padding: 10px;
     box-sizing: border-box;
@@ -63,11 +70,16 @@
     display: block;
     border-radius: 8px;
   }
+
+  /* Дополнительный стиль для контейнера с твитом */
+  .grid-item blockquote {
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
 </style>
 
 <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script>
 
-<!-- Подключение AOS (Animate on Scroll) JS -->
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 
 <script>
@@ -105,6 +117,7 @@ document.querySelectorAll('.grid-item video').forEach(video => {
   });
 });
 </script>
+
 
 
 {% schema %}
