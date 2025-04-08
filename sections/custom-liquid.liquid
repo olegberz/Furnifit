@@ -26,23 +26,22 @@
   <div class="grid-item">
     <video src="https://res.cloudinary.com/dkscd8svu/video/upload/v1743682048/furnifit_edited_1_xjulyy.mp4" loop muted playsinline></video>
   </div>
-
-  <div class="grid-item">
-    <video src="https://res.cloudinary.com/dkscd8svu/video/upload/v1744094545/4065218-uhd_4096_2160_25fps_jq1t1x.mp4" loop muted playsinline></video>
-  </div>
 </div>
 
 <style>
   .grid {
     display: flex;
+    justify-content: center; /* Центрируем всю сетку */
     flex-wrap: wrap;
-    justify-content: center;
     gap: 15px;
+    width: 100%; /* Чтобы сетка занимала всю доступную ширину */
+    max-width: 950px; /* Ограничиваем максимальную ширину сетки */
+    margin: 0 auto; /* Центрируем саму сетку на странице */
   }
 
   .grid-item {
-    width: 450px;  /* Ширина видео */
-    height: 640px; /* Высота видео */
+    width: 235px;  /* Ширина видео */
+    height: 465px; /* Высота видео */
     margin-bottom: 10px;
     padding: 10px;
     box-sizing: border-box;
@@ -56,7 +55,6 @@
     border-radius: 8px;
   }
 </style>
-
 
 <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script>
 
