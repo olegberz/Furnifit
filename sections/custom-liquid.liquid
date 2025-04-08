@@ -17,7 +17,6 @@
 
   <div class="grid-item">
     <video src="https://res.cloudinary.com/demo/video/upload/v1234567890/sample1.mp4" width="600" height="800" autoplay loop muted playsinline></video>
-    <div class="overlay">Your Text Here</div>
   </div>
 
   <div class="grid-item">
@@ -33,26 +32,16 @@
 .grid-item {
   width: 30%;
   margin-bottom: 10px;
-  position: relative;
 }
 .grid-item video {
   width: 100%;
   display: block;
   border-radius: 8px;
 }
-.overlay {
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
-  background: rgba(0, 0, 0, 0.6);
-  color: white;
-  padding: 5px 10px;
-  font-size: 16px;
-  border-radius: 5px;
-}
 </style>
 
 <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script>
+
 
 {% schema %}
 {
