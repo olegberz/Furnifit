@@ -16,19 +16,19 @@
   <div class="grid-sizer"></div>
 
   <div class="grid-item">
-    <video src="https://res.cloudinary.com/dkscd8svu/video/upload/v1743691321/4231455-hd_1920_1080_25fps_qml2wc.mp4" loop muted playsinline></video>
+    <video class="fade-in" src="https://res.cloudinary.com/dkscd8svu/video/upload/v1743691321/4231455-hd_1920_1080_25fps_qml2wc.mp4" loop muted playsinline></video>
   </div>
 
   <div class="grid-item">
-    <video src="https://res.cloudinary.com/dkscd8svu/video/upload/v1743691197/3770034-hd_1920_1080_25fps_v2pbva.mp4" loop muted playsinline></video>
+    <video class="fade-in" src="https://res.cloudinary.com/dkscd8svu/video/upload/v1743691197/3770034-hd_1920_1080_25fps_v2pbva.mp4" loop muted playsinline></video>
   </div>
 
   <div class="grid-item">
-    <video src="https://res.cloudinary.com/dkscd8svu/video/upload/v1743682048/furnifit_edited_1_xjulyy.mp4" loop muted playsinline></video>
+    <video class="fade-in" src="https://res.cloudinary.com/dkscd8svu/video/upload/v1743682048/furnifit_edited_1_xjulyy.mp4" loop muted playsinline></video>
   </div>
 
   <div class="grid-item">
-    <video src="https://res.cloudinary.com/dkscd8svu/video/upload/v1744094545/4065218-uhd_4096_2160_25fps_jq1t1x.mp4" loop muted playsinline></video>
+    <video class="fade-in" src="https://res.cloudinary.com/dkscd8svu/video/upload/v1744094545/4065218-uhd_4096_2160_25fps_jq1t1x.mp4" loop muted playsinline></video>
   </div>
 </div>
 
@@ -49,6 +49,14 @@
     margin-bottom: 10px;
     padding: 10px;
     box-sizing: border-box;
+    opacity: 0; /* Элементы изначально скрыты */
+    transform: translateY(50px); /* Элементы изначально немного ниже */
+    transition: opacity 1s ease, transform 1s ease; /* Плавный переход */
+  }
+
+  .grid-item.show {
+    opacity: 1; /* Когда элемент становится видимым, он становится видимым */
+    transform: translateY(0); /* Элемент поднимается */
   }
 
   .grid-item video {
@@ -62,10 +70,26 @@
 
 <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script>
 
-
 <script>
+  // Создаем новый Intersection Observer
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Добавляем класс "show", чтобы анимировать элементы
+        entry.target.classList.add('show');
+        // Останавливаем наблюдение за этим элементом
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 }); // Элемент будет отслеживаться, когда 10% будет видно на экране
+
+  // Применяем observer ко всем видео
+  document.querySelectorAll('.fade-in').forEach(video => {
+    observer.observe(video);
+  });
+
+  // Для видео, чтобы они начинали воспроизводиться при наведении (для десктопа)
   document.querySelectorAll('.grid-item video').forEach(video => {
-    // for desktop 
     video.addEventListener('mouseenter', () => {
       video.play();
     });
@@ -74,7 +98,7 @@
       video.currentTime = 0;
     });
 
-    // for mobile
+    // Для мобильных устройств
     video.addEventListener('touchstart', () => {
       if (video.paused) {
         video.play();
