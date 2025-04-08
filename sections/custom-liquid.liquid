@@ -12,80 +12,38 @@
   }
 {%- endstyle -%}
 
-<div class="grid">
-  <div class="grid-sizer"></div> 
-
-  <div class="grid-item">
-    <div class="media-container">
-      <video class="custom-video" autoplay loop muted playsinline>
-        <source src="https://res.cloudinary.com/dkscd8svu/video/upload/v1743682048/furnifit_edited_1_xjulyy.mp4" type="video/mp4">
-      </video>
+  <div class="grid" data-masonry='{"itemSelector": ".grid-item", "columnWidth": ".grid-sizer", "percentPosition": true}'>
+    <div class="grid-sizer"></div> 
+    <div class="grid-item"><img src="https://cdn.shopify.com/s/files/1/0846/8335/8473/files/Humbert_PoyetlancierenihreersteMobelkollektion.jpg?v=1743530488" width="600" height="800" alt="Product1">
+    <div class="overlay">Your Text Here</div>
     </div>
-  </div>
-
-  <div class="grid-item">
-    <div class="media-container">
-      <video class="custom-video" autoplay loop muted playsinline>
-        <source src="https://res.cloudinary.com/dkscd8svu/video/upload/v1743691197/3770034-hd_1920_1080_25fps_v2pbva.mp4" type="video/mp4">
-      </video>
-    </div>
-  </div>
-
-  <div class="grid-item">
-    <div class="media-container">
-      <video class="custom-video" autoplay loop muted playsinline>
-        <source src="https://res.cloudinary.com/dkscd8svu/video/upload/v1743691321/4231455-hd_1920_1080_25fps_qml2wc.mp4" type="video/mp4">
-      </video>
-    </div>
-  </div>
+    <div class="grid-item"><img src="https://cdn.shopify.com/s/files/1/0846/8335/8473/files/person-browsing-books-in-an-outdoor-library.jpg?v=1735907392" width="600" height="400" alt="Product2"></div>
+    <div class="grid-item"><img src="https://cdn.shopify.com/s/files/1/0846/8335/8473/files/Furniture_gif_-_Fond_blanc.gif?v=1743321426" width="600" height="400" alt="Product3"></div>
 </div>
 
 <style>
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 колонки */
-    gap: 20px; /* Пространство между видео */
-    margin: 0 auto; /* Центрирование */
-    padding-top: 50px; /* Дополнительное пространство сверху */
-  }
-
   .grid-item {
-    position: relative;
-    width: 100%;
-    height: 300px; /* Установим фиксированную высоту для видео */
-  }
+  width: 30%;
+  margin-bottom: 10px;
+}
+.grid-item img {
+  width: 100%;
+  display: block;
+}
 
-  .media-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-    background-color: #000; /* Черный фон для контейнера */
-  }
-
-  .custom-video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Заполнение контейнера без искажения */
-  }
+.overlay {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 5px 10px;
+  font-size: 16px;
+  border-radius: 5px;
+}
 </style>
 
-<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
-<script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    var grid = document.querySelector('.grid');
-    imagesLoaded(grid, function() {
-      new Masonry(grid, {
-        itemSelector: '.grid-item',
-        columnWidth: '.grid-sizer',
-        percentPosition: true
-      });
-    });
-  });
-</script>
-
+<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script>
 
 {% schema %}
 {
