@@ -71,19 +71,24 @@
 <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script>
 
 <script>
-  // Создаем новый Intersection Observer
-  const observer = new IntersectionObserver((entries, observer) => {
+  // Функция для активации плавного появления
+  function handleIntersection(entries, observer) {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        // Добавляем класс "show", чтобы анимировать элементы
-        entry.target.classList.add('show');
-        // Останавливаем наблюдение за этим элементом
-        observer.unobserve(entry.target);
+        entry.target.classList.add('show'); // Когда видео появляется, активируется анимация
+        observer.unobserve(entry.target); // Останавливаем наблюдение за этим элементом
       }
     });
-  }, { threshold: 0.1 }); // Элемент будет отслеживаться, когда 10% будет видно на экране
+  }
 
-  // Применяем observer ко всем видео
+  const observerOptions = {
+    threshold: 0.1 // Срабатывает, когда 10% элемента на экране
+  };
+
+  // Создаём новый IntersectionObserver
+  const observer = new IntersectionObserver(handleIntersection, observerOptions);
+
+  // Наблюдаем за всеми видео
   document.querySelectorAll('.fade-in').forEach(video => {
     observer.observe(video);
   });
