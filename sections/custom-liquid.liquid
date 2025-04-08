@@ -12,7 +12,6 @@
   }
 {%- endstyle -%}
 
-<!-- Подключение AOS (Animate on Scroll) -->
 <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
 <div class="grid" data-masonry='{"itemSelector": ".grid-item", "columnWidth": ".grid-sizer", "percentPosition": true}'>
@@ -38,20 +37,22 @@
 <style>
   .grid {
     display: flex;
-    justify-content: center; /* Центрирует все элементы */
+    justify-content: center;
     flex-wrap: wrap;
     gap: 15px;
     width: 100%;
-    padding: 0 15px; /* Отступы с обеих сторон */
+    padding: 0 15px;
     box-sizing: border-box;
   }
 
   .grid-item {
-    width: 450px;  /* Ширина видео */
-    height: 640px; /* Высота видео */
+    width: 450px;
+    height: 640px;
     margin-bottom: 10px;
     padding: 10px;
     box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
   }
 
   .grid-item video {
@@ -60,25 +61,23 @@
     object-fit: cover;
     display: block;
     border-radius: 8px;
+    transition: transform 0.2s ease;
   }
 </style>
 
 <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script>
 
-<!-- Подключение AOS (Animate on Scroll) JS -->
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 
 <script>
-  // Инициализация AOS
   AOS.init({
-    offset: 200,  // Начинается анимация, когда элемент будет на 200px от экрана
-    delay: 0,  // Задержка для каждого элемента
-    duration: 1000,  // Длительность анимации
-    easing: 'ease-out',  // Плавность анимации
-    once: true,  // Анимация будет выполняться один раз
+    offset: 200,
+    delay: 0,
+    duration: 1000,
+    easing: 'ease-out',
+    once: true,
   });
 
-  // Для видео, чтобы они начинали воспроизводиться при наведении (для десктопа)
   document.querySelectorAll('.grid-item video').forEach(video => {
     video.addEventListener('mouseenter', () => {
       video.play();
@@ -88,7 +87,6 @@
       video.currentTime = 0;
     });
 
-    // Для мобильных устройств
     video.addEventListener('touchstart', () => {
       if (video.paused) {
         video.play();
@@ -96,6 +94,34 @@
         video.pause();
         video.currentTime = 0;
       }
+    });
+
+    video.addEventListener('mousemove', (e) => {
+      const bounds = video.getBoundingClientRect();
+      const x = e.clientX - bounds.left;
+      const y = e.clientY - bounds.top;
+
+      const centerX = bounds.width / 2;
+      const centerY = bounds.height / 2;
+
+      const angleX = (centerX - x) / centerX * 5;  // Уменьшена сила наклона
+      const angleY = (centerY - y) / centerY * 5;  // Уменьшена сила наклона
+
+      video.style.transform = `rotateX(${angleY}deg) rotateY(${angleX}deg)`;
+    });
+
+    video.addEventListener('mouseleave', () => {
+      video.style.transform = 'rotateX(0) rotateY(0)';
+    });
+  });
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var grid = document.querySelector('.grid');
+    var masonry = new Masonry(grid, {
+      itemSelector: '.grid-item',
+      columnWidth: '.grid-sizer',
+      percentPosition: true,
+      transitionDuration: '0.5s'
     });
   });
 </script>
