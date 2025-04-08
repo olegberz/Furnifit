@@ -33,8 +33,11 @@
   width: 30%;
   margin-bottom: 10px;
 }
+
 .grid-item video {
   width: 100%;
+  height: 800px;              /* фиксируем высоту, как у первого видео */
+  object-fit: cover;          /* обрезаем, чтобы не растягивалось */
   display: block;
   border-radius: 8px;
 }
