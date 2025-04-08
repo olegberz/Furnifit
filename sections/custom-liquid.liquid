@@ -47,12 +47,23 @@
 
 <script>
   document.querySelectorAll('.grid-item video').forEach(video => {
+    // 🖱 Для мыши
     video.addEventListener('mouseenter', () => {
       video.play();
     });
     video.addEventListener('mouseleave', () => {
       video.pause();
-      video.currentTime = 0; 
+      video.currentTime = 0;
+    });
+
+    // 📱 Для тача (мобилки)
+    video.addEventListener('touchstart', () => {
+      if (video.paused) {
+        video.play();
+      } else {
+        video.pause();
+        video.currentTime = 0;
+      }
     });
   });
 </script>
