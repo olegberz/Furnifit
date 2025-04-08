@@ -12,6 +12,7 @@
   }
 {%- endstyle -%}
 
+<!-- Подключение AOS (Animate on Scroll) -->
 <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
 <div class="grid" data-masonry='{"itemSelector": ".grid-item", "columnWidth": ".grid-sizer", "percentPosition": true}'>
@@ -37,22 +38,20 @@
 <style>
   .grid {
     display: flex;
-    justify-content: center;
+    justify-content: center; /* Центрирует все элементы */
     flex-wrap: wrap;
     gap: 15px;
     width: 100%;
-    padding: 0 15px;
+    padding: 0 15px; /* Отступы с обеих сторон */
     box-sizing: border-box;
   }
 
   .grid-item {
-    width: 450px;
-    height: 640px;
+    width: 450px;  /* Ширина видео */
+    height: 640px; /* Высота видео */
     margin-bottom: 10px;
     padding: 10px;
     box-sizing: border-box;
-    overflow: hidden;
-    position: relative;
   }
 
   .grid-item video {
@@ -61,28 +60,25 @@
     object-fit: cover;
     display: block;
     border-radius: 8px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-
-  .grid-item:hover video {
-    transform: scale(0.95) translateY(-10px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   }
 </style>
 
 <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script>
 
+<!-- Подключение AOS (Animate on Scroll) JS -->
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 
 <script>
+  // Инициализация AOS
   AOS.init({
-    offset: 200, 
-    delay: 0, 
-    duration: 1000,  
-    easing: 'ease-out', 
-    once: true, 
+    offset: 200,  // Начинается анимация, когда элемент будет на 200px от экрана
+    delay: 0,  // Задержка для каждого элемента
+    duration: 1000,  // Длительность анимации
+    easing: 'ease-out',  // Плавность анимации
+    once: true,  // Анимация будет выполняться один раз
   });
 
+  // Для видео, чтобы они начинали воспроизводиться при наведении (для десктопа)
   document.querySelectorAll('.grid-item video').forEach(video => {
     video.addEventListener('mouseenter', () => {
       video.play();
@@ -92,6 +88,7 @@
       video.currentTime = 0;
     });
 
+    // Для мобильных устройств
     video.addEventListener('touchstart', () => {
       if (video.paused) {
         video.play();
@@ -99,16 +96,6 @@
         video.pause();
         video.currentTime = 0;
       }
-    });
-  });
-
-  document.addEventListener('DOMContentLoaded', function() {
-    var grid = document.querySelector('.grid');
-    var masonry = new Masonry(grid, {
-      itemSelector: '.grid-item',
-      columnWidth: '.grid-sizer',
-      percentPosition: true,
-      transitionDuration: '0.5s'
     });
   });
 </script>
