@@ -53,15 +53,16 @@
 
 .grid {
   display: flex;
-  justify-content: flex-start; 
-  align-items: flex-start; 
+  justify-content: flex-start;
+  align-items: flex-start;
   flex-wrap: wrap;
   gap: 15px;
   width: 100%;
   padding: 0 15px;
   box-sizing: border-box;
-  flex-grow: 1; 
-  margin-left: 250px; 
+  flex-grow: 1;
+  margin-left: 250px;  /* Оставляем отступ слева, но не увеличиваем ширину */
+  max-width: calc(100% - 250px); /* Ограничиваем максимальную ширину */
 }
 
 .grid-item {
@@ -87,7 +88,7 @@
   margin-top: 15px;
   margin-bottom: 10px;
   flex-grow: 1;
-  overflow: hidden; 
+  overflow: hidden;
 }
 
 .grid-item {
