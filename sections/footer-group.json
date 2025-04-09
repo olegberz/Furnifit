@@ -29,18 +29,34 @@
             "menu": "footer"
           }
         },
+        "link_list_8nmVHr": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Quick links",
+            "menu": "company"
+          }
+        },
         "link_list_eibHgp": {
           "type": "link_list",
           "settings": {
             "heading": "Support",
             "menu": "support"
           }
+        },
+        "link_list_4JBP6G": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Quick links",
+            "menu": "legal"
+          }
         }
       },
       "block_order": [
         "image_LgJx8i",
         "link_list_X84fVD",
-        "link_list_eibHgp"
+        "link_list_8nmVHr",
+        "link_list_eibHgp",
+        "link_list_4JBP6G"
       ],
       "settings": {
         "color_scheme": "scheme-3",
