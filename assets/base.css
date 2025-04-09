@@ -3600,7 +3600,7 @@ details-disclosure > details {
   line-height: 140%;
   border-radius: 8px;
   position: absolute;
-  right: 220px;
+  right: 240px;
   top: 50%;
   transform: translateY(-50%);
   text-decoration: none;
