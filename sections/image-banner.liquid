@@ -166,9 +166,16 @@
   </div>
 </div>
 <style>
- .banner__box {
-  padding-left: 14rem !important;
-} 
+.banner__media img {
+  width: 100vw; /* Устанавливает ширину на весь экран */
+  height: 100vh; /* Устанавливает высоту на весь экран */
+  object-fit: cover; /* Сохраняет пропорции картинки и заполняет пространство */
+}
+
+.banner__box {
+  padding-left: 0 !important; /* Убираем лишние отступы */
+  padding-right: 0 !important; /* Убираем лишние отступы */
+}
 </style>
 
 {% schema %}
