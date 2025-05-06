@@ -3620,6 +3620,10 @@ details-disclosure > details {
   border: 2px solid #333; 
   transform: translateY(-50%) scale(1.05);
 }
+
+.header__heading {
+  margin-right: -100px;
+}
 /* VIDEO BUTTON */
 
 .svg-wrapper {
