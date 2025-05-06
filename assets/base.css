@@ -3622,7 +3622,7 @@ details-disclosure > details {
 }
 
 .h2 {
-  margin-right: -50px;
+  margin-right: -50px !important;
 }
 /* VIDEO BUTTON */
 
